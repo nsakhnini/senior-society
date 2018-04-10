@@ -5,27 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <meta name="mobile-viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no,maximum-scale = 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/speechRecognition.js"></script>
+    <script src="js/feedController.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/setting.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
     <script src="js/setting.js"></script>
+    <script>
+        window.onload = function () {
+            closeSidebar();
+        };
+        function openSidebar() {
+            document.getElementById("mySidebarSettings").style.display = "block";
+        }
+        function closeSidebar() {
+            document.getElementById("mySidebarSettings").style.display = "none";
+        }
+    </script>
 </head>
 
-<body>
-    <div>
-        <div class="w3-container w3-teal w3-center">
-          <p class=" w3-xxlarge">Setting</p>  
+<body style="max-width:600px">
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebarSettings">
+    <div class="w3-container w3-theme-d2">
+        <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+        <br>
+        <div class="w3-padding w3-center">
+            <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
         </div>
-        <div class="w3-container">
+    </div>
+    <a class="w3-bar-item w3-button" href="newsfeed.html"><h2>Home</h2></a>
+    <a class="w3-bar-item w3-button" href="messages.html"><h2>Messages</h2></a>
+    <a class="w3-bar-item w3-button" href="friendreq.html"><h2>Friends</h2></a>
+    <a class="w3-bar-item w3-button" href="#"><h2>Settings</h2></a>
+</nav>
+    <div>
+        <div class="">
+            <header class="w3-bar w3-card w3-theme">
+                <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+                <h1 class="w3-bar-item">Settings</h1>
+            </header>
+        </div>
+        <div class="w3-container" >
                 <ul class="w3-ul w3-xlarge">
-                        <li class="w3-button w3-block">Account</li>
-                        <li class="w3-button w3-block">Preference</li>
-                        <li class="w3-button w3-block" onclick="openNav()">Privacy</li>
-                        <li class="w3-button w3-block">Sign Out</li>
+                        <li class="w3-button w3-block" style="font-size: 25px !important;">Account</li>
+                        <li class="w3-button w3-block" style="font-size: 25px !important;">Preference</li>
+                        <li class="w3-button w3-block" onclick="openNav()" style="font-size: 25px !important;">Privacy</li>
+                        <li class="w3-button w3-block" style="font-size: 25px !important;">Sign Out</li>
                 </ul>
-                <div id="mySidenav" class="sidenav">
+                <div id="mySidenav" class="sidenav" style="max-width:600px">
+                    <header class="w3-bar w3-card w3-theme">
+                        <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    </header>
                         <ul class="w3-ul w3-large w3-left-align">
                                 <li class="w3-block">
                                         <label class="switch">                                                

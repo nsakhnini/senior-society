@@ -57,7 +57,7 @@ window.onload = function () {
     }
 
     //Use the API
-    //var par = document.getElementById("output"); //The clickable object
-    //var res =document.getElementById("result"); //Where do I want my results
-    //par.addEventListener("click", function(){speak(res)}); //Adding the click listener
+    var par = document.getElementById("searchMic"); //The clickable object
+    var res =document.getElementById("searchText"); //Where do I want my results
+    par.addEventListener("click", function(){speak(res)}); //Adding the click listener
 };
