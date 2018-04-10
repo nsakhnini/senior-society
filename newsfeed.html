@@ -13,7 +13,10 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/speechRecognition.js"></script>
     <script src="js/feedController.js"></script>
-    <title>News Feed</title>
+	
+	<script src="https://hammerjs.github.io/dist/hammer.js"></script>	<!--For swipe feature-->
+    
+	<title>News Feed</title>
     <script>
         window.onload = function (ev) {
             /*document.getElementById('searchFormFeed').addEventListener('submit', function (e) {
@@ -66,7 +69,54 @@
         <img class="w3-circle" id="searchButtonFeed" src="https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png" style="width:40px; height:40px">
     </form>
 </div>-->
+<div class="w3-container">
+    <hr>
+    <div class="w3-cell-row">
+        <div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" style="width:100%">
+        </div>
+        <div class="w3-cell w3-container">
+            <h3 style="font-size: 35px;">James Hill</h3>
+            <p style="font-size: 25px;">Is your: Friend<br>Works at: CVS Pharmacy</p>
+        </div>
+    </div>
+    <hr>
+    <div class="w3-cell-row" id = "newsfeedElement>
+        <div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg" style="width:100%">
+        </div>
+        <div class="w3-cell w3-container">
+            <h3 style="font-size: 35px;">Jane Doe</h3>
+            <p style="font-size: 25px;">Is your: Sister<br>Works at: Chase Bank</p>
+        </div>
+    </div>
+    <hr>
+    <div class="w3-cell-row">
+        <div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg" style="width:100%">
+        </div>
+        <div class="w3-cell w3-container">
+            <h3 style="font-size: 35px;">Jasmine Smith</h3>
+            <p style="font-size: 25px;">Is your: Cousin<br>Works at: Rush Hospital</p>
+        </div>
+    </div>
+    <hr>
+</div>
 
-
+	<!--Swipe Feature code: TODO: add to jquery-->
+	<script>
+	//reference class 'w3-cell-row'
+	var newsfeedElement = document.querySelector('.w3-cell-row');
+	var gestureManager = new Hammer.Manager(newsfeedElement);
+	var pan = new Hammer.Pan();		//Recognizer
+	
+	gestureManager.add(pan);		//adding to Manager instance
+	
+	gestureManager.on("pan",function(ev){
+		//newsfeedElement.textContent = ev.type + " deltaX:" + ev.deltaX;
+		var per = 100*ev.deltaX / window.innerWidth;
+		newsfeedElement.style.transform = "translateX(" + per + "%)";
+	});
+	</script>
 </body>
 </html>
