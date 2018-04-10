@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Website Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* Style the header */
+        .header {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the topnav links */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body style="max-width:600px">
+
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+    <div class="w3-container w3-theme-d2">
+        <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+        <br>
+        <div class="w3-padding w3-center">
+            <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
+        </div>
+    </div>
+    <a class="w3-bar-item w3-button" href="#"><h2>Home</h2></a>
+    <a class="w3-bar-item w3-button" href="#"><h2>Messages</h2></a>
+    <a class="w3-bar-item w3-button" href="#"><h2>Friends</h2></a>
+    <a class="w3-bar-item w3-button" href="#"><h2>Settings</h2></a>
+</nav>
+
+<header class="w3-bar w3-card w3-theme">
+    <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+    <h1 class="w3-bar-item">Find a Friend</h1>
+</header>
+<div class = "w3-bar w3-card w3-theme" style="padding-left:5%">
+    <form id="searchForm">
+        <img class="w3-circle" src="https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png" style="width:30px; height:30px">
+        <input type="text" id="searchText" style="width:88%" placeholder="Search a friend's name... ">
+    </form>
+</div>
+
+<div class="w3-container">
+    <hr>
+    <div class="w3-cell-row">
+        <div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" style="width:100%">
+        </div>
+        <div class="w3-cell w3-container">
+            <h3>James Hill</h3>
+            <p>Is your: Friend<br>Works at: CVS Pharmacy</p>
+        </div>
+    </div>
+    <hr>
+    <div class="w3-cell-row">
+        <div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg" style="width:100%">
+        </div>
+        <div class="w3-cell w3-container">
+            <h3>Jane Doe</h3>
+            <p>Is your: Sister<br>Works at: Chase Bank</p>
+        </div>
+    </div>
+    <hr>
+    <div class="w3-cell-row">
+        <div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg" style="width:100%">
+        </div>
+        <div class="w3-cell w3-container">
+            <h3>Jasmine Smith</h3>
+            <p>Is your: Cousin<br>Works at: Rush Hospital</p>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<footer class="w3-container w3-theme w3-margin-top">
+
+</footer>
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        //search(document.getElementById('searchText'));
+        document.getElementById('searchText').value ="hi";
+
+        e.preventDefault();
+
+
+    }, false);
+
+    closeSidebar();
+    function openSidebar() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+    function closeSidebar() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+</body>
+</html>
