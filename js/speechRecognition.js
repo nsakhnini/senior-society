@@ -60,4 +60,8 @@ window.onload = function () {
     var par = document.getElementById("searchMic"); //The clickable object
     var res =document.getElementById("searchText"); //Where do I want my results
     par.addEventListener("click", function(){speak(res)}); //Adding the click listener
+
+    var par2 = document.getElementById("searchMicMsg"); //The clickable object
+    var res2 =document.getElementById("searchTextMsg"); //Where do I want my results
+    par2.addEventListener("click", function(){speak(res2)}); //Adding the click listener
 };
