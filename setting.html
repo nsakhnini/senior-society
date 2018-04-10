@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/setting.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="js/setting.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="w3-container w3-teal w3-center">
+          <p class=" w3-xxlarge">Setting</p>  
+        </div>
+        <div class="w3-container">
+                <ul class="w3-ul w3-xlarge">
+                        <li class="w3-button w3-block">Account</li>
+                        <li class="w3-button w3-block">Preference</li>
+                        <li class="w3-button w3-block" onclick="openNav()">Privacy</li>
+                        <li class="w3-button w3-block">Sign Out</li>
+                </ul>
+                <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <ul class="w3-ul w3-large w3-left-align">
+                                <li class="w3-block">
+                                        <label class="switch">                                                
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                        </label>
+                                        Find me ONLY through email/phone
+                                </li>
+                                <li class="w3-block">
+                                        <label class="switch">                                                
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                        </label>
+                                        Only Friend can see my status
+                                </li>
+                        </ul>
+                        
+                </div>
+        </div>
+        <!-- Sidebar -->
+        
+    </div>  
+ 
+
+
+</body>
+</html>
