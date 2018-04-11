@@ -71,7 +71,7 @@
 </div>-->
 <div class="w3-container">
     <hr>
-    <div class="w3-cell-row">
+    <div class="w3-cell-row" id="post1">
         <div class = "w3-cell-row">
         <div class="w3-cell" style="width:10%">
             <img class="w3-circle" src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" style="width:100%">
@@ -92,7 +92,7 @@
         </div>
     </div>
     <hr>
-    <div class="w3-cell-row">
+    <div class="w3-cell-row" id="post2">
         <div class = "w3-cell-row">
         <div class="w3-cell" style="width:10%">
             <img class="w3-circle" src="https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg" style="width:100%">
@@ -114,7 +114,7 @@
         </div>
     </div>
     <hr>
-    <div class="w3-cell-row">
+    <div class="w3-cell-row" id="post3">
         <div class = "w3-cell-row">
         <div class="w3-cell" style="width:10%">
             <img class="w3-circle" src="http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg" style="width:100%">
@@ -140,17 +140,41 @@
 	<!--Swipe Feature code: TODO: add to jquery-->
 	<script>
 	//reference class 'w3-cell-row'
-	var newsfeedElement = document.querySelector('.w3-cell-row');
-	var gestureManager = new Hammer.Manager(newsfeedElement);
+	var newsfeedElement1 = document.getElementById("post1");
+
+	var gestureManager1 = new Hammer.Manager(newsfeedElement1);
 	var pan = new Hammer.Pan();		//Recognizer
 	
-	gestureManager.add(pan);		//adding to Manager instance
+	gestureManager1.add(pan);		//adding to Manager instance
 	
-	gestureManager.on("pan",function(ev){
+	gestureManager1.on("pan",function(ev){
 		//newsfeedElement.textContent = ev.type + " deltaX:" + ev.deltaX;
 		var per = 100*ev.deltaX / window.innerWidth;
-		newsfeedElement.style.transform = "translateX(" + per + "%)";
+		newsfeedElement1.style.transform = "translateX(" + per + "%)";
 	});
+
+	var newsfeedElement2 = document.getElementById("post2");
+    var gestureManager2 = new Hammer.Manager(newsfeedElement2);
+    var pan = new Hammer.Pan();		//Recognizer
+
+    gestureManager2.add(pan);		//adding to Manager instance
+
+    gestureManager2.on("pan",function(ev){
+        //newsfeedElement.textContent = ev.type + " deltaX:" + ev.deltaX;
+        var per = 100*ev.deltaX / window.innerWidth;
+        newsfeedElement2.style.transform = "translateX(" + per + "%)";
+    });
+    var newsfeedElement3 = document.getElementById("post3");
+    var gestureManager3 = new Hammer.Manager(newsfeedElement3);
+    var pan = new Hammer.Pan();		//Recognizer
+
+    gestureManager3.add(pan);		//adding to Manager instance
+
+    gestureManager3.on("pan",function(ev){
+        //newsfeedElement.textContent = ev.type + " deltaX:" + ev.deltaX;
+        var per = 100*ev.deltaX / window.innerWidth;
+        newsfeedElement3.style.transform = "translateX(" + per + "%)";
+    });
 	</script>
 </body>
 </html>
