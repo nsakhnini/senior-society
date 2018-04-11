@@ -1,0 +1,111 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\baa83f100efc775f0c1ecbc8ad78f10f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ce2364620c9877fa830e8f006465f019\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\18913c284f6b68ecf19d10440273de31\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\1c2761f4aa1f2c34c8419b9de78ad304\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\3a75a02c80623e8606520681fd3a4490\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\f040cea57f4800922dc1350ea3e0c1f5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\362862f807f067a111928dd8dd63692d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\7c148a717ec3457c20df2e2a0498f5d7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\434f91628704a8282c74bbb77e06a8e8\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\ee2c8f4898a18053cd42cd9da63ecccd\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0330c77187345e70acace4526825120c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0993a28333dbc4123020442b0001694d\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:5:5-71
+	android:name
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:5:22-68
+application
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:7:5-21:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ce2364620c9877fa830e8f006465f019\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ce2364620c9877fa830e8f006465f019\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:10:9-41
+	android:roundIcon
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:11:9-54
+	android:icon
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:13:9-40
+activity#studio.ninasakhnini.seniorsociety.MainActivity
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:14:9-20:20
+	android:name
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:14:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\baa83f100efc775f0c1ecbc8ad78f10f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\baa83f100efc775f0c1ecbc8ad78f10f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ce2364620c9877fa830e8f006465f019\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ce2364620c9877fa830e8f006465f019\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\18913c284f6b68ecf19d10440273de31\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\18913c284f6b68ecf19d10440273de31\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\1c2761f4aa1f2c34c8419b9de78ad304\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\1c2761f4aa1f2c34c8419b9de78ad304\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\3a75a02c80623e8606520681fd3a4490\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\3a75a02c80623e8606520681fd3a4490\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\f040cea57f4800922dc1350ea3e0c1f5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\f040cea57f4800922dc1350ea3e0c1f5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\362862f807f067a111928dd8dd63692d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\362862f807f067a111928dd8dd63692d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\7c148a717ec3457c20df2e2a0498f5d7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\7c148a717ec3457c20df2e2a0498f5d7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\434f91628704a8282c74bbb77e06a8e8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\434f91628704a8282c74bbb77e06a8e8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\ee2c8f4898a18053cd42cd9da63ecccd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\ee2c8f4898a18053cd42cd9da63ecccd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0330c77187345e70acace4526825120c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0330c77187345e70acace4526825120c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0993a28333dbc4123020442b0001694d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Nina Sakhnini\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0993a28333dbc4123020442b0001694d\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Nina Sakhnini\Documents\seniorsociety\app\src\main\AndroidManifest.xml

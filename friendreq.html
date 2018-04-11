@@ -5,10 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/speechRecognition.js"></script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* Style the header */
+        .header {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the topnav links */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .btn {
+            background-color: DodgerBlue; /* Blue background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: RoyalBlue;
+        }
+    </style>
 </head>
+
 <body style="max-width:500px">
 
 <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
@@ -38,54 +92,144 @@
         <img class="w3-circle" id="searchButton" src="https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png" style="width:40px; height:40px">
     </form>
 </div>
-
 <div class="w3-container">
     <hr>
-    <div class="w3-cell-row">
-        <div class="w3-cell" style="width:30%">
-            <img class="w3-circle" src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" style="width:100%">
+
+    <div id="txt1" class="w3-cell-row">
+        <div id="img1" class="w3-cell" style="width:30%">
         </div>
         <div class="w3-cell w3-container">
-            <h3 style="font-size: 35px;">James Hill</h3>
-            <p style="font-size: 25px;">Is your: Friend<br>Works at: CVS Pharmacy</p>
+            <h3 id="name1" style="width:100%"></h3>
+        </div>
+        <div id="bttn" align="right">
+            <button id="bttnAdd" class="btn">Add Friend</button>
+        </div>
+        <div id="bttnClose" align="right">
+            <button id="close" class="btn"><i class="fa fa-close"></i></button>
         </div>
     </div>
+
+
     <hr>
-    <div class="w3-cell-row">
-        <div class="w3-cell" style="width:30%">
-            <img class="w3-circle" src="https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg" style="width:100%">
+    <div id="txt2" class="w3-cell-row">
+        <div id="img2" class="w3-cell" style="width:30%">
         </div>
         <div class="w3-cell w3-container">
-            <h3 style="font-size: 35px;">Jane Doe</h3>
-            <p style="font-size: 25px;">Is your: Sister<br>Works at: Chase Bank</p>
+            <h3 id="name2"></h3>
         </div>
     </div>
+
+
     <hr>
-    <div class="w3-cell-row">
-        <div class="w3-cell" style="width:30%">
-            <img class="w3-circle" src="http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg" style="width:100%">
+    <div id="txt3" class="w3-cell-row">
+        <div id="img3" class="w3-cell" style="width:30%">
         </div>
         <div class="w3-cell w3-container">
-            <h3 style="font-size: 35px;">Jasmine Smith</h3>
-            <p style="font-size: 25px;">Is your: Cousin<br>Works at: Rush Hospital</p>
+            <h3 id="name3"></h3>
         </div>
     </div>
     <hr>
 </div>
-
 <footer class="w3-container w3-theme w3-margin-top">
 
 </footer>
 
 <script>
+    var boolAdd = false;
+    document.getElementById('bttnAdd').style.display= "none";
+    document.getElementById('close').style.display= "none";
+
+    var greenTick = document.createElement("IMG");
+    greenTick.setAttribute("src", "https://417smiles.com/wp-content/uploads/2017/08/green-tick-icon-0.png");
+    greenTick.setAttribute("width", "15%");
+
+    var cancel = document.createElement("IMG");
+    cancel.setAttribute("src", "https://cdn0.iconfinder.com/data/icons/round-ui-icons/512/close_red.png");
+    cancel.setAttribute("width", "20%");
+
+
+    var img = document.createElement("IMG");
+    img.setAttribute("class", "w3-circle");
+    img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
+    img.setAttribute("width", "100%");
+
+    var name3 = "Jasmine Smith";
+    var relationship3 = "Is your: Cousin";
+    var job3 = "Works at: Rush Hospital";
+
+    var img1 = document.createElement("IMG");
+    img1.setAttribute("class", "w3-circle");
+    img1.setAttribute("src", " http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg");
+    img1.setAttribute("width", "100%");
+
+    var name1 = "James Hill";
+    var relationship1 = "Is your: Cousin";
+    var job1 = "Works at: Rush Hospital";
+
+    var img2 = document.createElement("IMG");
+    img2.setAttribute("class", "w3-circle");
+    img2.setAttribute("src", "https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg");
+    img2.setAttribute("width", "100%");
+
+    var name2 = "Jane Doe";
+    var relationship2 = "Is your: Sister";
+    var job2 = "Works at: Chase Bank";
+
+
+
     document.getElementById('searchForm').addEventListener('submit', function(e) {
         //search(document.getElementById('searchText'));
         document.getElementById('searchText').value ="hi";
 
         e.preventDefault();
+        document.getElementById('img1').append(img1);
+        document.getElementById('name1').append(name1);
+        document.getElementById('bttnAdd').style.display= "block";
+
+
+        document.getElementById('img2').append(img2);
+        document.getElementById('name2').append(name2);
+        document.getElementById('txt2').append(relationship2);
+        document.getElementById('txt2').innerHTML +="<br>"
+        document.getElementById('txt2').append(job2);
+
+        document.getElementById('img3').append(img);
+        document.getElementById('name3').append(name3);
+        document.getElementById('txt3').append(relationship3);
+        document.getElementById('txt3').innerHTML +="<br>"
+        document.getElementById('txt3').append(job3);
+
 
 
     }, false);
+
+    document.getElementById('bttnAdd').addEventListener('click', function(evt)
+    {
+        // Your code here.
+        if(boolAdd == false){
+            document.getElementById('bttnAdd').style.display= "none";
+            document.getElementById('close').style.display= "block";
+            alert("Friend Request Sent");
+            boolAdd=true;
+
+        }
+
+
+    });
+
+    document.getElementById('close').addEventListener('click', function(evt)
+    {
+        // Your code here.
+        if(boolAdd == true){
+            document.getElementById('bttnAdd').style.display= "block";
+            document.getElementById('close').style.display= "none";
+            alert("Friend Request Cancelled");
+            boolAdd=false;
+
+        }
+
+
+    });
 
     closeSidebar();
     function openSidebar() {
