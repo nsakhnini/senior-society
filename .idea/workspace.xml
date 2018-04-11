@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89639474-fb12-4286-8e5a-e3c0c26e0489" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/newsfeed.html" afterPath="$PROJECT_DIR$/newsfeed.html" />
-    </list>
+    <list default="true" id="89639474-fb12-4286-8e5a-e3c0c26e0489" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -212,6 +210,7 @@
         <option value="$PROJECT_DIR$/js/speechRecognition.js" />
         <option value="$PROJECT_DIR$/js/feedController.js" />
         <option value="$PROJECT_DIR$/newsfeed.html" />
+        <option value="$PROJECT_DIR$/test.html" />
       </list>
     </option>
   </component>
@@ -412,12 +411,12 @@
       <option name="presentableId" value="Default" />
       <updated>1523291673010</updated>
       <workItem from="1523291674756" duration="5778000" />
-      <workItem from="1523326321227" duration="26269000" />
+      <workItem from="1523326321227" duration="27465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28905000" />
+    <option name="totallyTimeSpent" value="30101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="41" width="1938" height="1048" extended-state="6" />
@@ -726,6 +725,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="178" column="7" lean-forward="false" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
           <folding />
         </state>
       </provider>
