@@ -1,0 +1,7 @@
+.slider-view{
+	width: 100%;
+	overflow: hidden;
+}
+.slider{
+	width: 140%; /*2panels*/
+}
