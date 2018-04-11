@@ -1,5 +1,6 @@
 //TODO: why it doesn't work with desktop firefox?
 window.onload = function () {
+    console.log("in recognition");
     var isSpeaking = false; //To track if the speaking is in progress or not
     var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition ; //Getting the Speech Recognition API
     var recognition = new SpeechRecognition();//Initiation of a speech recognition instance
@@ -14,13 +15,16 @@ window.onload = function () {
             isSpeaking = true;
             console.log('Ready to receive a command.');
         }
+        else{
+            abortSpeech();
+        }
         //Recognition successful
         recognition.onresult = function (event) {
             console.log("on result");
             spokenText = event.results[0][0].transcript;
             confidence = event.results[0][0].confidence;
             console.log('Result: ' + spokenText + ' Confidence: ' + confidence );
-            res.innerText = spokenText;
+            res.value = spokenText;
         };
         //When the user is not speaking
         recognition.onspeechend = function () {
@@ -39,11 +43,11 @@ window.onload = function () {
         };
         //Capture other errors
         recognition.onerror = function (event) {
-            window.alert( 'Sorry, I didn\'t understand that. Can you please repeat?');
-            if(!isSpeaking) {
-                recognition.start();
-                isSpeaking = true;
-                console.log('Ready to receive a command.');
+            if(event.error != "aborted") {
+                window.alert('Sorry, I didn\'t understand that. Please try again');
+            }
+            if(isSpeaking) {
+                isSpeaking = false;
             }
             console.log('Error occurred in recognition: ' + event.error);
         };
@@ -52,6 +56,7 @@ window.onload = function () {
     function abortSpeech() {
         if(isSpeaking){
             recognition.abort();
+            isSpeaking = false;
             console.log("aborted");
         }
     }
@@ -59,9 +64,6 @@ window.onload = function () {
     //Use the API
     var par = document.getElementById("searchMic"); //The clickable object
     var res =document.getElementById("searchText"); //Where do I want my results
-    par.addEventListener("click", function(){speak(res)}); //Adding the click listener
-
-    var par2 = document.getElementById("searchMicMsg"); //The clickable object
-    var res2 =document.getElementById("searchTextMsg"); //Where do I want my results
-    par2.addEventListener("click", function(){speak(res2)}); //Adding the click listener
+    if (par != null && res != null)
+        par.addEventListener("click", function(){speak(res)}); //Adding the click listener
 };

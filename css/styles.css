@@ -261,3 +261,6 @@ button {
 #searchButton:hover{
     cursor: pointer ;
 }
+#searchButtonMsg:hover{
+     cursor: pointer ;
+ }
