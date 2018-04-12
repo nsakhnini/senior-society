@@ -32,8 +32,8 @@
     </script>
 </head>
 
-<body style="max-width:500px">
-<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebarSettings">
+<body style="">
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebarSettings" style="display: none">
     <div class="w3-container w3-theme-d2">
         <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
         <br>
@@ -49,20 +49,20 @@
     <div>
         <div class="">
             <header class="w3-bar w3-card w3-theme">
-                <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
-                <h1 class="w3-bar-item">Settings</h1>
+                <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" type="button" onclick="openSidebar()">&#9776;</button>
+                <h2 class="w3-bar-item">Settings</h2>
             </header>
         </div>
         <div class="w3-container" >
                 <ul class="w3-ul w3-xlarge">
-                        <li class="w3-button w3-block" style="font-size: 25px !important;">Account</li>
-                        <li class="w3-button w3-block" style="font-size: 25px !important;">Preference</li>
-                        <li class="w3-button w3-block" onclick="openNav()" style="font-size: 25px !important;">Privacy</li>
-                        <li class="w3-button w3-block" style="font-size: 25px !important;">Sign Out</li>
+                        <li class="w3-button w3-block" style="font-size: 30px !important;">Account</li>
+                        <li class="w3-button w3-block" style="font-size: 30px !important;">Preference</li>
+                        <li class="w3-button w3-block" onclick="openNav()" style="font-size: 30px !important;">Privacy</li>
+                        <li class="w3-button w3-block" style="font-size: 30px !important;">Sign Out</li>
                 </ul>
                 <div id="mySidenav" class="sidenav" style="max-width:600px">
                     <header class="w3-bar w3-card w3-theme">
-                        <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+                        <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" type="button" onclick="openSidebar()">&#9776;</button>
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     </header>
                         <ul class="w3-ul w3-large w3-left-align">

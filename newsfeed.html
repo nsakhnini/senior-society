@@ -15,6 +15,7 @@
 
 
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>	<!--For swipe feature-->
+    <link rel="stylesheet" href="css/swipeFeature_swipe.css">
 
     <title>News Feed</title>
     <script>
@@ -29,9 +30,9 @@
         }
     </script>
 </head>
-<body style="max-width:500px">
+<body style="">
 
-<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebarFeed">
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebarFeed" style="display: none">
     <div class="w3-container w3-theme-d2">
         <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
         <br>
@@ -47,7 +48,7 @@
 
 <header class="w3-bar w3-card w3-theme">
     <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
-    <h1 class="w3-bar-item">News Feed</h1>
+    <h2 class="w3-bar-item">News Feed</h2>
 </header>
 <!--<div class = "w3-bar w3-card w3-theme" style="padding-left:5%; padding-bottom: 5%;">
     <form id="searchFormFeed">
@@ -60,75 +61,145 @@
 </div>-->
 <div class="w3-container">
     <hr>
-    <div class="w3-cell-row" id="post1">
-        <div class = "w3-cell-row">
-            <div class="w3-cell" style="width:10%">
-                <img class="w3-circle" src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" style="width:100%">
-            </div>
-            <div class="w3-cell w3-container">
-                <h3 style="font-size: 25px;">James Hill</h3>
-                <p style="font-size: 18px;">I am having a great day.</p>
-            </div>
-        </div>
-
-        <div class = "w3-cell-row " style="padding-left:5%; padding-top: 5%; ">
-            <form id="commentForm1">
-                <div class="wrapper" style="width:80%;">
-                    <input type="text" id="commentText1" style="width:80%; height: 40px !important; font-size: 25px; padding-top: 0" placeholder="Comment " >
-                    <button class="mic" id="commentMic1" style="height: 40px !important; width: 8%; padding-top: 5px; position: center;"><i class="fa fa-microphone" style="font-size:35px;"></i></button>
+    <div id="post1" class="panel-view w3-cell-row" >
+        <div class="slider">
+            <!-- Main panel -->
+            <div class="panel w3-cell">
+                <!--Icon, Name, Post-->
+                <div class = "w3-cell-row">
+                    <div class="w3-cell" style="width:10%;">
+                        <img class="w3-circle" src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" style="width:100%">
+                    </div>
+                    <div class="w3-cell w3-container">
+                        <h3 style="font-size: 25px;">James Hill</h3>
+                        <p style="font-size: 18px;">I am having a great day.</p>
+                    </div>
                 </div>
-                <button style="padding-bottom: 5px; margin-bottom: auto;" type="button"><img class="" id="commentButton1" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Ic_insert_comment_48px.svg" style=" height:130%" onclick="addComment(document.getElementById('commentText1').value , 'post1');"></button>
-            </form>
-            <!-- Options Panel -->
-
-        </div>
-
-    </div>
-    <!--<div class="w3-container w3-cell panel" style="width: 30%"></div>
-    <div class="w3-container w3-cell panel">
-        <button type="button" class="btn btn-primary btn-lg btn-block">World</button>
-    </div>-->
-    <hr>
-    <div class="w3-cell-row" id="post2">
-        <div class = "w3-cell-row">
-            <div class="w3-cell" style="width:10%">
-                <img class="w3-circle" src="https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg" style="width:100%">
-            </div>
-            <div class="w3-cell w3-container">
-                <h3 style="font-size: 25px;">Jane Doe</h3>
-                <p style="font-size: 18px;">Such a beautiful sunset :)</p>
-                <a href="https://images.pexels.com/photos/36744/agriculture-arable-clouds-countryside.jpg?auto=compress&cs=tinysrgb&h=750&w=1260"> <img src="https://images.pexels.com/photos/36744/agriculture-arable-clouds-countryside.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" height="30%" ></a>
-            </div>
-        </div>
-        <div class = "w3-cell-row " style="padding-left:5%; padding-top: 5%; ">
-            <form id="commentForm2">
-                <div class="wrapper" style="width:80%;">
-                    <input type="text" id="commentText2" style="width:80%; height: 40px !important; font-size: 25px; padding-top: 0" placeholder="Comment " >
-                    <button class="mic" id="commentMic2" style="height: 40px !important; width: 8%; padding-top: 5px; position: center;"><i class="fa fa-microphone" style="font-size:35px;"></i></button>
+                <!-- Comment Field -->
+                <div class = "w3-cell-row " style="padding-left:5%; padding-top: 5%; ">
+                    <form id="commentForm1">
+                        <div class="wrapper" style="width:80%;">
+                            <input type="text" id="commentText1" style="width:80%; height: 40px !important; font-size: 25px; padding-top: 0" placeholder="Comment " >
+                            <button class="mic" id="commentMic" style="height: 40px !important; width: 8%; padding-top: 5px; position: center;"><i class="fa fa-microphone" style="font-size:35px;"></i></button>
+                        </div>
+                        <button style="padding-bottom: 5px; margin-bottom: auto;" type="button"><img class="" id="commentButton2" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Ic_insert_comment_48px.svg" style=" height:130%" onclick="addComment(document.getElementById('commentText2').value , 'post2');"></button>
+                    </form>
                 </div>
-                <button style="padding-bottom: 5px; margin-bottom: auto;" type="button"><img class="" id="commentButton2" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Ic_insert_comment_48px.svg" style=" height:130%" onclick="addComment(document.getElementById('commentText2').value , 'post2');"></button>
-            </form>
+            </div>
+            <!-- Options panel -->
+            <div class="panel w3-cell  w3-blue w3-container">
+                <!-- Restriction button -->
+                <button onclick="document.getElementById('restrModal3').style.display='block'" type="button" style="width:40%; margin:5%; padding:5%;"class="restrictionButton button w3-theme-d2 w3-hover-theme w3-round w3-card-4"><img id="Icon_World" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Globe-icon.png" style="width:100%;"></button>
+                <!-- Restriction modal Dialog -->
+                <div id="restrModal1" class ="w3-modal" style="position:fixed; width:50%; left:50%;">
+                    <div class="w3-modal-content">
+                        <div class="w3-container">
+                            <span onclick="document.getElementById('restrModal1').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                            <p>Hide posts like this?</p>
+
+                            <div class="w3-bar">
+                                <button class="restrYes w3-button w3-hover-theme w3-round w3-block w3-card">Yes</button>
+                                <button class="restrNo w3-button w3-hover-theme w3-round w3-block w3-card">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
-    <div class="w3-cell-row" id="post3">
-        <div class = "w3-cell-row">
-            <div class="w3-cell" style="width:10%">
-                <img class="w3-circle" src="http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg" style="width:100%">
+    <div id="post2" class="panel-view w3-cell-row">
+        <div class="slider">
+            <!-- Main Panel-->
+            <div class="panel w3-cell">
+                <!--Icon, Name, Post-->
+                <div class = "w3-cell-row">
+                    <div class="w3-cell" style="width:10%">
+                        <img class="w3-circle" src="https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg" style="width:100%">
+                    </div>
+                    <div class="w3-cell w3-container">
+                        <h3 style="font-size: 25px;">Jane Doe</h3>
+                        <p style="font-size: 18px;">Such a beautiful sunset :)</p>
+                        <a href="https://images.pexels.com/photos/36744/agriculture-arable-clouds-countryside.jpg?auto=compress&cs=tinysrgb&h=750&w=1260"> <img src="https://images.pexels.com/photos/36744/agriculture-arable-clouds-countryside.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" height="30%" ></a>
+                    </div>
+                </div>
+                <!-- Comment Field -->
+                <div class = "w3-cell-row " style="padding-left:5%; padding-top: 5%; ">
+                    <form id="commentForm2">
+                        <div class="wrapper" style="width:80%;">
+                            <input type="text" id="commentText2" style="width:80%; height: 40px !important; font-size: 25px; padding-top: 0" placeholder="Comment " >
+                            <button class="mic" id="commentMic2" style="height: 40px !important; width: 8%; padding-top: 5px; position: center;"><i class="fa fa-microphone" style="font-size:35px;"></i></button>
+                        </div>
+                        <button style="padding-bottom: 5px; margin-bottom: auto;" type="button"><img class="" id="commentButton2" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Ic_insert_comment_48px.svg" style=" height:130%" onclick="addComment(document.getElementById('commentText2').value , 'post2');"></button>
+                    </form>
+                </div>
             </div>
-            <div class="w3-cell w3-container">
-                <h3 style="font-size: 25px;">Jasmine Smith</h3>
-                <p style="font-size: 18px;">Is Happy :D</p>
+            <!-- Options panel -->
+            <div class="panel w3-cell  w3-blue w3-container">
+                <!-- Restriction button -->
+                <button onclick="document.getElementById('restrModal3').style.display='block'" type="button" style="width:40%; margin:5%; padding:5%;"class="restrictionButton button w3-theme-d2 w3-hover-theme w3-round w3-card-4"><img id="Icon_World" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Globe-icon.png" style="width:100%;"></button>
+                <!-- Restriction modal Dialog -->
+                <div id="restrModal2" class ="w3-modal" style="position:fixed; width:50%; left:50%;">
+                    <div class="w3-modal-content">
+                        <div class="w3-container">
+                            <span class="w3-button w3-display-topright" onclick="document.getElementById('restrModal2').style.display='none'" >&times;</span>
+                            <p>Hide posts like this?</p>
+
+                            <div class="w3-bar">
+                                <button class="restrYes w3-button w3-hover-theme w3-round w3-block w3-card">Yes</button>
+                                <button class="restrNo w3-button w3-hover-theme w3-round w3-block w3-card">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class = "w3-cell-row " style="padding-left:5%; padding-top: 5%; ">
-            <form id="commentForm3">
-                <div class="wrapper" style="width:80%;">
-                    <input type="text" id="commentText3" style="width:80%; height: 40px !important; font-size: 25px; padding-top: 0" placeholder="Comment " >
-                    <button class="mic" id="commentMic3" style="height: 40px !important; width: 8%; padding-top: 5px; position: center;"><i class="fa fa-microphone" style="font-size:35px;"></i></button>
+    </div>
+    <hr>
+    <div id="post3" class="panel-view w3-cell-row">
+        <div class="slider">
+            <!-- Main Panel -->
+            <div class="panel w3-cell">
+                <!--Icon, Name, Post-->
+                <div class = "w3-cell-row">
+                    <div class="w3-cell" style="width:10%">
+                        <img class="w3-circle" src="http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg" style="width:100%">
+                    </div>
+                    <div class="w3-cell w3-container">
+                        <h3 style="font-size: 25px;">Jasmine Smith</h3>
+                        <p style="font-size: 18px;">Is Happy :D</p>
+                    </div>
                 </div>
-                <button style="padding-bottom: 5px; margin-bottom: auto;" type="button"><img class="" id="commentButton3" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Ic_insert_comment_48px.svg" style=" height:130%" onclick="addComment(document.getElementById('commentText3').value , 'post3');"></button>
-            </form>
+                <!-- Comment Field -->
+                <div class = "w3-cell-row " style="padding-left:5%; padding-top: 5%; ">
+                    <form id="commentForm3">
+                        <div class="wrapper" style="width:80%;">
+                            <input type="text" id="commentText3" style="width:80%; height: 40px !important; font-size: 25px; padding-top: 0" placeholder="Comment " >
+                            <button class="mic" id="commentMic3" style="height: 40px !important; width: 8%; padding-top: 5px; position: center;"><i class="fa fa-microphone" style="font-size:35px;"></i></button>
+                        </div>
+                        <button style="padding-bottom: 5px; margin-bottom: auto;" type="button"><img class="" id="commentButton3" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Ic_insert_comment_48px.svg" style=" height:130%" onclick="addComment(document.getElementById('commentText3').value , 'post3');"></button>
+                    </form>
+                </div>
+            </div>
+            <!-- Options panel -->
+            <div class="panel w3-cell  w3-blue w3-container">
+                <!-- Restriction button -->
+                <button onclick="document.getElementById('restrModal3').style.display='block'" type="button" style="width:40%; margin:5%; padding:5%;"class="restrictionButton button w3-theme-d2 w3-hover-theme w3-round w3-card-4"><img id="Icon_World" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Globe-icon.png" style="width:100%;"></button>
+                <!-- Restriction modal Dialog -->
+                <div id="restrModal3" class ="w3-modal" style="position:fixed; width:50%; left:50%;">
+                    <div class="w3-modal-content">
+                        <div class="w3-container">
+                            <span onclick="document.getElementById('restrModal3').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                            <p>Hide posts like this?</p>
+
+                            <div class="w3-bar">
+                                <button class="restrYes w3-button w3-hover-theme w3-round w3-block w3-card">Yes</button>
+                                <button class="restrNo w3-button w3-hover-theme w3-round w3-block w3-card">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
@@ -136,42 +207,92 @@
 
 <!--Swipe Feature code: TODO: add to jquery-->
 <script>
-    //reference class 'w3-cell-row'
-    var newsfeedElement1 = document.getElementById("post1");
+    console.log(window.innerWidth);
+    var sliders = document.querySelectorAll(".slider");
 
-    var gestureManager1 = new Hammer.Manager(newsfeedElement1);
+    var gestureManager1 = new Hammer.Manager(sliders[0]);
     var pan = new Hammer.Pan();		//Recognizer
-
     gestureManager1.add(pan);		//adding to Manager instance
-
     gestureManager1.on("pan",function(ev){
-        //newsfeedElement.textContent = ev.type + " deltaX:" + ev.deltaX;
-        var per = 100*ev.deltaX / window.innerWidth;
-        newsfeedElement1.style.transform = "translateX(" + per + "%)";
+        translatePanel(ev,0);
     });
 
-    var newsfeedElement2 = document.getElementById("post2");
-    var gestureManager2 = new Hammer.Manager(newsfeedElement2);
+    var gestureManager2 = new Hammer.Manager(sliders[1]);
     var pan = new Hammer.Pan();		//Recognizer
-
     gestureManager2.add(pan);		//adding to Manager instance
-
     gestureManager2.on("pan",function(ev){
-        //newsfeedElement.textContent = ev.type + " deltaX:" + ev.deltaX;
-        var per = 100*ev.deltaX / window.innerWidth;
-        newsfeedElement2.style.transform = "translateX(" + per + "%)";
+        translatePanel(ev,1);
     });
-    var newsfeedElement3 = document.getElementById("post3");
-    var gestureManager3 = new Hammer.Manager(newsfeedElement3);
+
+    var gestureManager3 = new Hammer.Manager(sliders[2]);
     var pan = new Hammer.Pan();		//Recognizer
-
     gestureManager3.add(pan);		//adding to Manager instance
-
     gestureManager3.on("pan",function(ev){
-        //newsfeedElement.textContent = ev.type + " deltaX:" + ev.deltaX;
-        var per = 100*ev.deltaX / window.innerWidth;
-        newsfeedElement3.style.transform = "translateX(" + per + "%)";
+        translatePanel(ev,2);
     });
+
+    function translatePanel(ev, i){
+        console.log("deltaX: "+ev.deltaX+"  velocityX: "+ev.velocityX);
+
+        if(ev.isFinal){
+            //if pan is past velocity or distance threshold, move to Options Panel
+            if( ev.velocity<-1 || ev.deltaX < (window.innerWidth*-1/2) ){
+                console.log("activating Options Panel");
+                activateOptionsPanel(i);
+            }
+            else{
+                console.log("activating Main Panel");
+                activateMainPanel(i);
+            }
+        }
+        //drag is moving right
+        else if(ev.velocityX>=0) {
+            sliders[i].style.transform = "translateX(" + ev.deltaX/10 + "px)"; //restrict movement
+        }
+        //drag is moving left
+        else{ //if(ev.velocityX<=0){
+            sliders[i].style.transform = "translateX(" + ev.deltaX + "px)";	//allow movement
+        }
+    }
+
+    function activateMainPanel(i){
+        sliders[i].style.transform ="initial";
+    }
+    function activateOptionsPanel(i){
+        sliders[i].style.transform = "translateX(" + -50+ "%)";
+    }
+
 </script>
+
+<script>
+
+    /*Event Listeners for clicking World Button (restrictionButton), opens Dialog to change settings*/
+    /*
+    console.log("setting up Restriction Buttons");
+    var restrictionButtons = document.querySelectorAll(".restrictionButton");
+
+    restrictionButtons[0].addEventListener('click',function(){
+        console.log("restr button for Post1...");
+        openRestrictionDialog(0);
+    });
+
+    restrictionButtons[1].addEventListener('click',function(){
+        console.log("restr button for Post2 registered...");
+        openRestrictionDialog(1);
+    });
+
+    restrictionButtons[2].addEventListener('click',function(){
+        console.log("restr button for Post3 registered...");
+        openRestrictionDialog(2);
+    });
+
+    function openRestrictionDialog(i){
+        var restrictionDialogs = document.querySelectorAll(".restrictionDialog");
+
+        restrictionDialog[i].style.visibility= 'visible';
+    }
+    */
+</script>
+
 </body>
 </html>
