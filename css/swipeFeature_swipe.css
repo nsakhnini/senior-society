@@ -1,0 +1,22 @@
+.panel-view{
+	width: 100%;
+	overflow: hidden;
+}
+.slider{
+	width: 200%; /*2panels at 100% of screen*/
+}
+
+.panel{
+	width: 50%; /*don't know why 50%*, but takes up 100% width*/
+}
+
+.restrictionDialog{
+	visibility: hidden;
+	position: absolute; /*can be positioned anywhere, defaults to center of screen*/
+	z-index: 1;
+	
+	width: 100px;
+	height: 50px;
+	background: silver;
+}
+
