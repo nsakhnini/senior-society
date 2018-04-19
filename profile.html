@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <meta name="mobile-viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no,maximum-scale = 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/speechRecognition.js"></script>
+    <script src="js/feedController.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/setting.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="js/setting.js"></script>
+    <script>
+        window.onload = function () {
+            closeSidebar();
+        };
+        function openSidebar() {
+            document.getElementById("mySidebarProfile").style.display = "block";
+        }
+        function closeSidebar() {
+            document.getElementById("mySidebarProfile").style.display = "none";
+        }
+    </script>
+</head>
+
+<body style="">
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebarProfile" style="display: none">
+    <div class="w3-container w3-theme-d2">
+        <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+        <br>
+        <a href="profile.html" class="w3-padding w3-center">
+            <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
+        </a> 
+        <a class="w3-bar-item w3-button" href="newsfeed.html"><h2>Home</h2></a>
+        <a class="w3-bar-item w3-button" href="messages.html"><h2>Messages</h2></a>
+        <a class="w3-bar-item w3-button" href="friendreq.html"><h2>Friends</h2></a>
+        <a class="w3-bar-item w3-button" href="setting.html"><h2>Settings</h2></a>
+    </div>
+</nav>
+    <div>
+        <div class="">
+            <header class="w3-bar w3-card w3-theme">
+                <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" type="button" onclick="openSidebar()">&#9776;</button>
+                <h2 class="w3-bar-item">My Profile</h2>
+				<img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:20%">
+            </header>
+			<div class="w3-container w3-center w3-blue">
+				<h1> Post to my wall </h1>
+			
+			</div>
+			<div class="w3-card w3-padding-8 w3-left">
+				<div class="w3-left" style="width:50%">
+					<img src="https://pbs.twimg.com/profile_images/929933611754708992/ioSgz49P_400x400.jpg" class="w3-circle w3-padding" alt="Bill Gates" style="width:100%">
+				</div>
+				<h2 class="w3-padding">
+					Hey, probably don't sell people's data.
+				</h2>
+				<button class="w3-button w3-blue"> Comment</button>
+				<button class="w3-button w3-green" style="margin-right:20%"> Like</button>
+				<button class="w3-button w3-red"> Remove</button>
+				
+				
+				
+			</div>
+			<div class="w3-card w3-padding-8 w3-left">
+				<div class="w3-left" style="width:50%">
+					<img src="https://media.townhall.com/townhall/reu/ha/2018/40/2018-02-09T080301Z_1_LYNXMPEE180IN_RTROPTP_4_USA-CONGRESS-SHUTDOWN.JPG" class="w3-circle w3-padding" alt="Sen. Kennedy" style="width:100%">
+				</div>
+				<h2 class="w3-padding">
+					Your user agreement sucks!
+				</h2>
+				<button class="w3-button w3-blue"> Comment</button>
+				<button class="w3-button w3-green" style="margin-right:20%"> Like</button>
+				<button class="w3-button w3-red"> Remove</button>
+			</div>
+        </div>
+        <div class="w3-container" >
+                
+                
+        </div>
+        <!-- Sidebar -->
+        
+    </div>  
+ 
+
+
+</body>
+</html>
