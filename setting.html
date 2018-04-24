@@ -1,3 +1,9 @@
+<!--
+	setting.html
+	
+	04/24/2018
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,22 +24,29 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/setting.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<link rel="stylesheet" href="css/sidebarMenu.css">					<!--For sidebar menu-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- w3 google Icons, only for help icon so far -->
+	
+	
     <script src="js/setting.js"></script>
     <script>
         window.onload = function () {
             closeSidebar();
         };
         function openSidebar() {
-            document.getElementById("mySidebarSettings").style.display = "block";
+            document.getElementById("sidebarMenu").style.display = "block";
         }
         function closeSidebar() {
-            document.getElementById("mySidebarSettings").style.display = "none";
+            document.getElementById("sidebarMenu").style.display = "none";
         }
     </script>
 </head>
 
 <body style="">
-<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebarSettings" style="display: none">
+
+<!-- Sidebar Menu -->
+<nav class="w3-sidebar w3-bar-block w3-card" id="sidebarMenu" style="display: none">
     <div class="w3-container w3-theme-d2">
         <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
         <br>
@@ -41,16 +54,52 @@
             <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
         </div>
     </div>
-    <a class="w3-bar-item w3-button" href="newsfeed.html"><h2>Home</h2></a>
-    <a class="w3-bar-item w3-button" href="messages.html"><h2>Messages</h2></a>
-    <a class="w3-bar-item w3-button" href="friendreq.html"><h2>Friends</h2></a>
-    <a class="w3-bar-item w3-button" href="#"><h2>Settings</h2></a>
+    <a class="w3-bar-item w3-button" href="newsfeed.html">
+		<i class="fa fa-home fa-2x"></i>
+		<h2>Home</h2>
+	</a>
+    <a class="w3-bar-item w3-button" href="messages.html">
+		<i class="fa fa-comments fa-2x"></i>
+		<h2>Messages</h2>
+	</a>
+    <a class="w3-bar-item w3-button" href="friendreq.html">
+		<i class="fa fa-users fa-2x"></i>
+		<h2>Friends</h2>
+	</a>
+    <a class="w3-bar-item w3-button" href="setting.html">
+		<i class="fa fa-cog fa-2x"></i>
+		<h2>Settings</h2>
+	</a>
 </nav>
+
     <div>
         <div class="">
             <header class="w3-bar w3-card w3-theme">
                 <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" type="button" onclick="openSidebar()">&#9776;</button>
                 <h2 class="w3-bar-item">Settings</h2>
+				
+				<!-- help button -->
+				<button class="w3-button w3-hover-theme w3-right" button onclick="document.getElementById('help').style.display='block'"> <i class="material-icons" id="help_NewsFeed" style="float:right;">help</i> </button>
+	
+				<!-- help button dialog -->
+				<div id="help" class ="w3-modal">
+					<div class="w3-modal-content">
+						<div class="w3-container" style="color:black">
+							<span class="w3-button w3-display-topright" onclick="document.getElementById('help').style.display='none'" >&times;</span>
+							
+							<h2>Settings Help</h2>
+							<p>This is the <b>Settings</b> page. Here you are able to modify how Social Society displays information to others and to you.</p>
+							<h4>Account</h4>
+							<p>"empty"</p>
+							<h4>Preference</h4>
+							<p>"empty"</p>
+							<h4>Privacy</h4>
+							<p>The Privacy menu helps you modify how others can find you, and what others see when you post</p>
+							<h4>Sign Out</h4>
+							<p>"empty" </p>
+						</div>
+					</div>
+				</div>
             </header>
         </div>
         <div class="w3-container" >
