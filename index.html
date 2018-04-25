@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Senior Society</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
@@ -22,202 +22,18 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
-
-    <!--Script to handle signing in using Firebase-->
-    <script type="text/javascript">
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDxwPt-wLBzohVENsOivD28rMj-7KS0BWg",
-            authDomain: "senior-society.firebaseapp.com",
-            databaseURL: "https://senior-society.firebaseio.com",
-            projectId: "senior-society",
-            storageBucket: "",
-            messagingSenderId: "118045466542"
-        };
-        // Initialize the default app
-        var defaultApp = firebase.initializeApp(config);
-        console.log(defaultApp.name);  // "[DEFAULT]"
-        // You can retrieve services via the defaultApp variable...
-        //var defaultStorage = defaultApp.storage();
-        var defaultDatabase = defaultApp.database();
-        /**
-         * Handles the sign in button press.
-         */
-        function toggleSignIn() {
-            if (firebase.auth().currentUser) {
-                // [START signout]
-                firebase.auth().signOut();
-                // [END signout]
-            } else {
-                var email = document.getElementById('email').value;
-                var password = document.getElementById('password').value;
-                if (email.length < 4) {
-                    alert('Please enter an email address.');
-                    return;
-                }
-                if (password.length < 4) {
-                    alert('Please enter a password.');
-                    return;
-                }
-                // Sign in with email and pass.
-                // [START authwithemail]
-                firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // [START_EXCLUDE]
-                    if (errorCode === 'auth/wrong-password') {
-                        alert('Wrong password.');
-                    } else {
-                        alert(errorMessage);
-                    }
-                    console.log(error);
-                    document.getElementById('quickstart-sign-in').disabled = false;
-                    // [END_EXCLUDE]
-                });
-                // [END authwithemail]
-            }
-            //document.getElementById('quickstart-sign-in').disabled = true;
-        }
-        /**
-         * Handles the sign up button press.
-         */
-        function handleSignUp() {
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-            if (email.length < 4) {
-                alert('Please enter an email address.');
-                return;
-            }
-            if (password.length < 4) {
-                alert('Please enter a password.');
-                return;
-            }
-            // Sign in with email and pass.
-            // [START createwithemail]
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // [START_EXCLUDE]
-                if (errorCode == 'auth/weak-password') {
-                    alert('The password is too weak.');
-                } else {
-                    alert(errorMessage);
-                }
-                console.log(error);
-                // [END_EXCLUDE]
-            });
-            // [END createwithemail]
-        }
-        /**
-         * Sends an email verification to the user.
-         */
-        function sendEmailVerification() {
-            // [START sendemailverification]
-            firebase.auth().currentUser.sendEmailVerification().then(function() {
-                // Email Verification sent!
-                // [START_EXCLUDE]
-                alert('Email Verification Sent!');
-                // [END_EXCLUDE]
-            });
-            // [END sendemailverification]
-        }
-        function sendPasswordReset() {
-            var email = document.getElementById('email').value;
-            // [START sendpasswordemail]
-            firebase.auth().sendPasswordResetEmail(email).then(function() {
-                // Password Reset Email Sent!
-                // [START_EXCLUDE]
-                alert('Password Reset Email Sent!');
-                // [END_EXCLUDE]
-            }).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // [START_EXCLUDE]
-                if (errorCode == 'auth/invalid-email') {
-                    alert(errorMessage);
-                } else if (errorCode == 'auth/user-not-found') {
-                    alert(errorMessage);
-                }
-                console.log(error);
-                // [END_EXCLUDE]
-            });
-            // [END sendpasswordemail];
-        }
-        /**
-         * initApp handles setting up UI event listeners and registering Firebase auth listeners:
-         *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
-         *    out, and that is where we update the UI.
-         */
-        function initApp() {
-            // Listening for auth state changes.
-            // [START authstatelistener]
-            firebase.auth().onAuthStateChanged(function(user) {
-                //document.getElementById('quickstart-verify-email').disabled = true;
-                if (user) {
-                    var displayName = user.displayName;
-                    var email = user.email;
-                    var emailVerified = user.emailVerified;
-                    var photoURL = user.photoURL;
-                    var isAnonymous = user.isAnonymous;
-                    var uid = user.uid;
-                    var providerData = user.providerData;
-                    document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-                    if (!emailVerified) {
-                        //document.getElementById('quickstart-verify-email').disabled = false;
-                    }
-                    window.location = "newsfeed.html";
-                } else {
-                    document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-                }
-                // [START_EXCLUDE silent]
-                //document.getElementById('quickstart-sign-in').disabled = false;
-                // [END_EXCLUDE]
-            });
-            document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-            document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-            document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-            document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
-        }
-        window.onload = function() {
-            initApp();
-        };
-    </script>
+    <script src="js/firebaseController.js"></script>
 </head>
 <body class="w3-indigo modal-open" style="color: #1d1e1f !important;">
 <div class="text-center">
-    <h1 style="font-size: 100px; color: white !important;">Senior Society</h1>
+    <h1 style="font-size: 100px; color: white !important;" class="py-3">Senior Society</h1>
 </div>
-<div class="modal show my-aut" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="informationModal" style="display: block;">
-    <div class="modal-dialog-centered" role="document" id="myModal">
-        <div class="modal-content">
-            <div class="modal-body lead" style="font-size: 25px;">
-                <h1>Hello, </h1><!--get the name-->
-                <p>Please sign in or sign up</p>
-                <form class="pl-3">
-                    <div class="form-group">
-                        <div class="row"><label for="email">Email: </label></div>
-                        <div class="row"><input class="form-control" style="display:inline;width:auto; font-size: 18px;" type="text" id="email" name="email" placeholder="Email"/></div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row"><label for="password">Password: </label></div>
-                        <div class="row"><input class="form-control" style="display:inline;width:auto; font-size: 18px;" type="password" id="password" name="password" placeholder="Password"/></div>
-                    </div>
-                </form>
-                <div>
-                    <button class="w3-text-indigo" type="button" id="quickstart-password-reset" name="verify-email">Reset Password by Email</button>
-                </div>
-            </div>
-            <div class="modal-footer" style="font-size: 25px;">
-                <button class="btn btn-dark modal-btns" id="quickstart-sign-in" name="signin">Sign In</button>
-                <button class="btn btn-dark modal-btns" id="quickstart-sign-up" name="signup">Sign Up</button>
-                <button type="button" class="btn btn-lg btn-dark modal-btns" data-dismiss="modal" onclick="document.getElementById('infoModal').remove(); document.getElementById('backdrop').remove();">X</button>
-            </div>
-        </div>
-    </div>
+<div class=" container my-aut px-xl-3 py-5 mx-auto my-auto text-center w-100 " id="infoModal" tabindex="-1" role="dialog" aria-labelledby="informationModal" style="display: block; background-color: #ffffff">
+    <h1 class="display-4">Hello</h1><!--get the name-->
+    <h1 class="display-4">Welcome to Senior Society</h1>
+    <h1 class = "pb-3">Please choose what you want to do:</h1>
+    <button class="btn px-xl-3" id="home-sign-in" name="signin" onclick="window.location ='signin.html'">Sign In</button>
+    <button class="btn px-xl-3" id="home-sign-up" name="signup" onclick="window.location ='signup.html'">Sign Up</button>
 </div>
-<div class="modal-backdrop show" id="backdrop"></div>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="mobile-viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no,maximum-scale = 1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/speechRecognition.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
+    <script src="js/firebaseController.js"></script>
+</head>
+<body class="w3-indigo modal-open" style="color: #1d1e1f !important;">
+<div class="text-center">
+    <h1 style="font-size: 100px; color: white !important;">Senior Society</h1>
+</div>
+<div class="modal show my-aut" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="informationModal" style="display: block;">
+    <div class="modal-dialog-centered" role="document" id="myModal">
+        <div class="modal-content">
+            <div class="modal-body lead" style="font-size: 25px;">
+                <h1>Hello, </h1><!--get the name-->
+                <p>Please sign in below</p>
+                <form class="pl-3">
+                    <div class="form-group">
+                        <div class="row"><label for="email">Email: </label></div>
+                        <div class="row"><input class="form-control" style="display:inline;width:auto; font-size: 18px;" type="text" id="email" name="email" placeholder="Email"/></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row"><label for="password">Password: </label></div>
+                        <div class="row"><input class="form-control" style="display:inline;width:auto; font-size: 18px;" type="password" id="password" name="password" placeholder="Password"/></div>
+                    </div>
+                </form>
+                <div>
+                    <button class="w3-text-indigo" type="button" id="quickstart-password-reset" name="verify-email">Reset Password by Email</button>
+                </div>
+            </div>
+            <div class="modal-footer" style="font-size: 25px;">
+                <button class="btn btn-dark modal-btns" id="quickstart-sign-in" name="signin">Sign In</button>
+                <button type="button" class="btn btn-lg btn-dark modal-btns" data-dismiss="modal" onclick="document.getElementById('infoModal').remove(); document.getElementById('backdrop').remove();">X</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop show" id="backdrop"></div>
+</body>
+</html>
