@@ -11,84 +11,84 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/speechRecognition.js"></script>
-  <script src="person.js"></script>
+  <script src="js/person.js"></script>
 </head>
 <style>
-.container {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-}
+  .container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
 
-.darker {
-  border-color: #ccc;
-  background-color: #ddd;
-}
+  .darker {
+    border-color: #ccc;
+    background-color: #ddd;
+  }
 
-.container::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
-.container img {
-  float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
-}
+  .container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
 
-.container img.right {
-  float: right;
-  margin-left: 20px;
-  margin-right:0;
-}
+  .container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+  }
 
-.time-right {
-  float: right;
-  color: #aaa;
-}
+  .time-right {
+    float: right;
+    color: #aaa;
+  }
 
-.time-left {
-  float: left;
-  color: #999;
-}
-div::-webkit-scrollbar {
-  width: 1em;
-}
+  .time-left {
+    float: left;
+    color: #999;
+  }
+  div::-webkit-scrollbar {
+    width: 1em;
+  }
 
-div::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
+  div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
 
-div::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
-div.ex1{
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+  div::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+  div.ex1{
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
-button{
-  background-color: transparent;
-  border: none;
-  color: black;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
+  button{
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-/* Darker background on mouse-over */
-button:hover {
-  background-color: RoyalBlue;
-}
+  /* Darker background on mouse-over */
+  button:hover {
+    background-color: RoyalBlue;
+  }
 
-/* The Modal (background) */
-.modal {
+  /* The Modal (background) */
+  .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -100,10 +100,10 @@ button:hover {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+  }
 
-/* Modal Content */
-.modal-content {
+  /* Modal Content */
+  .modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -115,94 +115,94 @@ button:hover {
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
-}
+  }
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
-}
+  }
 
-@keyframes animatetop {
+  @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
-}
+  }
 
-/* The Close Button */
-.close {
+  /* The Close Button */
+  .close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
+  }
 
-.close:hover,
-.close:focus {
+  .close:hover,
+  .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
+  }
 
-.modal-header {
+  .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
-}
+  }
 
-.modal-body {padding: 2px 16px;}
+  .modal-body {padding: 2px 16px;}
 
-.modal-footer {
+  .modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
-}
+  }
 </style>
 <body style="">
 
-  <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar" style="display: none">
-    <div class="w3-container w3-theme-d2">
-      <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
-      <br>
-      <a href="profile.html" class="w3-padding w3-center">
-                    <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
-                </a>
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar" style="display: none">
+  <div class="w3-container w3-theme-d2">
+    <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+    <br>
+    <div class="w3-padding w3-center">
+      <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
     </div>
-    <a class="w3-bar-item w3-button" href="newsfeed.html"><h2>Home</h2></a>
-    <a class="w3-bar-item w3-button" href="#"><h2>Messages</h2></a>
-    <a class="w3-bar-item w3-button" href="friendreq.html"><h2>Friends</h2></a>
-    <a class="w3-bar-item w3-button" href="setting.html"><h2>Settings</h2></a>
-  </nav>
-
-  <header class="w3-bar w3-card w3-theme">
-    <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" type="button" onclick="openSidebar()">&#9776;</button>
-    <h2 class="w3-bar-item">Messages</h2>
-  </header>
-  <div class = "w3-bar w3-card w3-theme" style="padding-left:1%; padding-bottom: 5%;">
-    <form id="searchForm">
-      <div class="wrapper" style="width:85%;">
-        <input type="text" id="searchText" style="width:90%; font-size: 30px; padding-top: 0" placeholder="Search a message... " >
-        <button class="mic" id="searchMic" type="button" style="width: 8%; padding-top: 5px;"><i class="fa fa-microphone" style="font-size:33px;"></i></button>
-      </div>
-
-    </form>
   </div>
+  <a class="w3-bar-item w3-button" href="newsfeed.html"><h2>Home</h2></a>
+  <a class="w3-bar-item w3-button" href="#"><h2>Messages</h2></a>
+  <a class="w3-bar-item w3-button" href="friendreq.html"><h2>Friends</h2></a>
+  <a class="w3-bar-item w3-button" href="setting.html"><h2>Settings</h2></a>
+</nav>
+
+<header class="w3-bar w3-card w3-theme">
+  <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" type="button" onclick="openSidebar()">&#9776;</button>
+  <h2 class="w3-bar-item">Messages</h2>
+</header>
+<div class = "w3-bar w3-card w3-theme" style="padding-left:1%; padding-bottom: 5%;">
+  <form id="searchForm">
+    <div class="wrapper" style="width:85%;">
+      <input type="text" id="searchText" style="width:90%; font-size: 30px; padding-top: 0" placeholder="Search a message... " >
+      <button class="mic" id="searchMic" type="button" style="width: 8%; padding-top: 5px;"><i class="fa fa-microphone" style="font-size:33px;"></i></button>
+    </div>
+
+  </form>
+</div>
 
 
-  <div class="w3-cell-row">
+<div class="w3-cell-row">
 
 
 
-    <div class="w3-container w3-cell" style="position: relative;left: auto;width:25%; height:500px">
-      <div class="w3-cell" >
-        <div id="msg-nav" style="overflow-y: scroll; overflow-x: hidden;position: relative;height:500px; ">
-          <div class="w3-container" id="list-group">
-          </div>
+  <div class="w3-container w3-cell" style="position: relative;left: auto;width:25%; height:500px">
+    <div class="w3-cell" >
+      <div id="msg-nav" style="overflow-y: scroll; overflow-x: hidden;position: relative;height:500px; ">
+        <div class="w3-container" id="list-group">
         </div>
       </div>
-
     </div>
 
-    <div id="curchat" class="w3-container w3-cell">
+  </div>
+
+  <div id="curchat" class="w3-container w3-cell">
 
     <div style="overflow-y: scroll; overflow-x: hidden;position: relative;left: auto;width:100%; height:500px;">
       <h3>You're Chat With:</h3>
@@ -236,9 +236,9 @@ button:hover {
 
   </div>
   <button id="newMsg" class="btn" style="background-color:green; color:white">New Chat</button>
-  </div>
-  <div class="w3-cell-row">
-<div class="w3-container w3-cell" style="width:25%"></div>
+</div>
+<div class="w3-cell-row">
+  <div class="w3-container w3-cell" style="width:25%"></div>
 
   <div class="container" id="msgInput" style="width:75%">
     <form action="/action_page.php" id="usrform">
@@ -265,9 +265,9 @@ button:hover {
     <div class="modal-body">
       <div><button id="c1"class="btn">Antone Kimmons<button></div>
       <div><button id="c2" class="btn">Carlie Hallee<button></div>
-        <div><button id="c3" class="btn">Diamond Sattler<button></div>
-          <div><button id="c4" class="btn">Jestine Primus<button></div>
-            <div><button id="c5" class="btn">Ozwell Swink<button></div>
+      <div><button id="c3" class="btn">Diamond Sattler<button></div>
+      <div><button id="c4" class="btn">Jestine Primus<button></div>
+      <div><button id="c5" class="btn">Ozwell Swink<button></div>
     </div>
   </div>
 
@@ -281,255 +281,255 @@ button:hover {
 
 <script>
 
-var img = document.createElement("IMG");
-img.setAttribute("class", "w3-circle");
-img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
-img.setAttribute("width", "100%");
+    var img = document.createElement("IMG");
+    img.setAttribute("class", "w3-circle");
+    img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
+    img.setAttribute("width", "100%");
 
-document.getElementById('searchForm').addEventListener('submit', function(e) {
-  //search(document.getElementById('searchText'));
-  document.getElementById('searchText').value ="hi";
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        //search(document.getElementById('searchText'));
+        document.getElementById('searchText').value ="hi";
 
-  e.preventDefault();
+        e.preventDefault();
 
 
-}, false);
-// Get the modal
-var modal = document.getElementById('myModal');
+    }, false);
+    // Get the modal
+    var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("newMsg");
+    // Get the button that opens the modal
+    var btn = document.getElementById("newMsg");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
         modal.style.display = "none";
     }
-}
-closeSidebar();
-function openSidebar() {
-  document.getElementById("mySidebar").style.display = "block";
-}
-function closeSidebar() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-$(document).ready(function() {
-  document.getElementById("sendmsg1").addEventListener("click", sendMsg, false);
-  document.getElementById("newMsg").addEventListener("click", newMessage, false);
-  document.getElementById("c1").addEventListener("click", addEvent, false);
-  document.getElementById("c2").addEventListener("click", addEvent, false);
-  document.getElementById("c3").addEventListener("click", addEvent, false);
-  document.getElementById("c4").addEventListener("click", addEvent, false);
-  document.getElementById("c5").addEventListener("click", addEvent, false);
-  convo1=document.getElementById('curchat').innerHTML;
-  console.log( "ready!" );
-  var screenHeight = $(window).height();
-  var j=0;
-  console.log( screenHeight);
-  for(i=0;i<5;i++){
-    j++;
-    j++;
-    var addF=results[j*i];
-    addElement('list-group', 'div','break'+(i).toString(),'<hr>');
-    addElement('break'+(i).toString(), 'button', 'p' +(i).toString(), '');
-    document.getElementById('p' +(i).toString()).addEventListener("click", addEvent, false);
-    document.getElementById('p' +(i).toString()).setAttribute('class','class="w3-cell-row');
-    addElement('p' +(i).toString(),'div',"info" + (i).toString(),""  );
-    addElement('info' + (i).toString(),'h3',"name" + (i).toString(),""  );
-    addElement('p' +(i).toString(), 'div', 'img' +(i).toString() , "");
-    if(addF.gender == "F"){
-      var img = document.createElement("IMG");
-      img.setAttribute("class", "w3-circle");
-      img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
-      img.setAttribute("width", "100%");
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
-    else{
-      var img = document.createElement("IMG");
-      img.setAttribute("class", "w3-circle");
-      img.setAttribute("src", "http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg");
-      img.setAttribute("width", "100%");
+    closeSidebar();
+    function openSidebar() {
+        document.getElementById("mySidebar").style.display = "block";
     }
-    document.getElementById('p' +(i).toString()).setAttribute('class','class="w3-cell-row');
-    document.getElementById('img' +(i).toString()).setAttribute('class','w3-cell' );
-    document.getElementById('img' +(i).toString()).setAttribute('style','width:30%' );
-    document.getElementById("info"+ (i).toString()).setAttribute('class', 'w3-cell w3-container');
-
-
-    document.getElementById('img' +(i).toString() ).append(img);
-    document.getElementById("name"+ (i).toString()).append(addF.name);
-    if(addF.relation == "NONE"){
-      document.getElementById('info'+ (i).toString()).append("NOT FRIEND");
+    function closeSidebar() {
+        document.getElementById("mySidebar").style.display = "none";
     }
-    else{
-      document.getElementById('info'+ (i).toString()).append("FRIEND");
+    $(document).ready(function() {
+        document.getElementById("sendmsg1").addEventListener("click", sendMsg, false);
+        document.getElementById("newMsg").addEventListener("click", newMessage, false);
+        document.getElementById("c1").addEventListener("click", addEvent, false);
+        document.getElementById("c2").addEventListener("click", addEvent, false);
+        document.getElementById("c3").addEventListener("click", addEvent, false);
+        document.getElementById("c4").addEventListener("click", addEvent, false);
+        document.getElementById("c5").addEventListener("click", addEvent, false);
+        convo1=document.getElementById('curchat').innerHTML;
+        console.log( "ready!" );
+        var screenHeight = $(window).height();
+        var j=0;
+        console.log( screenHeight);
+        for(i=0;i<5;i++){
+            j++;
+            j++;
+            var addF=results[j*i];
+            addElement('list-group', 'div','break'+(i).toString(),'<hr>');
+            addElement('break'+(i).toString(), 'button', 'p' +(i).toString(), '');
+            document.getElementById('p' +(i).toString()).addEventListener("click", addEvent, false);
+            document.getElementById('p' +(i).toString()).setAttribute('class','class="w3-cell-row');
+            addElement('p' +(i).toString(),'div',"info" + (i).toString(),""  );
+            addElement('info' + (i).toString(),'h3',"name" + (i).toString(),""  );
+            addElement('p' +(i).toString(), 'div', 'img' +(i).toString() , "");
+            if(addF.gender == "F"){
+                var img = document.createElement("IMG");
+                img.setAttribute("class", "w3-circle");
+                img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
+                img.setAttribute("width", "100%");
+            }
+            else{
+                var img = document.createElement("IMG");
+                img.setAttribute("class", "w3-circle");
+                img.setAttribute("src", "http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg");
+                img.setAttribute("width", "100%");
+            }
+            document.getElementById('p' +(i).toString()).setAttribute('class','class="w3-cell-row');
+            document.getElementById('img' +(i).toString()).setAttribute('class','w3-cell' );
+            document.getElementById('img' +(i).toString()).setAttribute('style','width:30%' );
+            document.getElementById("info"+ (i).toString()).setAttribute('class', 'w3-cell w3-container');
+
+
+            document.getElementById('img' +(i).toString() ).append(img);
+            document.getElementById("name"+ (i).toString()).append(addF.name);
+            if(addF.relation == "NONE"){
+                document.getElementById('info'+ (i).toString()).append("NOT FRIEND");
+            }
+            else{
+                document.getElementById('info'+ (i).toString()).append("FRIEND");
+            }
+            document.getElementById('info'+ (i).toString()).innerHTML+="<br>";
+            document.getElementById('info'+ (i).toString()).append(addF.work);
+            $("list-group"+(i).toString()).innerHTML+="</div>";
+            html="<hr>";
+        }
+    });
+    function newMessage(e){
+
     }
-    document.getElementById('info'+ (i).toString()).innerHTML+="<br>";
-    document.getElementById('info'+ (i).toString()).append(addF.work);
-    $("list-group"+(i).toString()).innerHTML+="</div>";
-    html="<hr>";
-  }
-});
-function newMessage(e){
+    function addElement(parentId, elementTag, elementId, html) {
+        // Adds an element to the document
+        var p = document.getElementById(parentId);
+        var newElement = document.createElement(elementTag);
+        newElement.setAttribute('id', elementId);
+        newElement.innerHTML = html;
+        p.appendChild(newElement);
+    }
 
-}
-function addElement(parentId, elementTag, elementId, html) {
-  // Adds an element to the document
-  var p = document.getElementById(parentId);
-  var newElement = document.createElement(elementTag);
-  newElement.setAttribute('id', elementId);
-  newElement.innerHTML = html;
-  p.appendChild(newElement);
-}
+    var conversation1;
+    var conversation2;
+    var conversation3;
+    var conversation4;
+    var conversation5;
 
-var conversation1;
-var conversation2;
-var conversation3;
-var conversation4;
-var conversation5;
+    conversation1="Hey how are you?";
+    conversation2=("Miss you!");
+    conversation3="Love all the pictures of the grandkids!";
+    conversation4="See you at lunch";
+    conversation5="It was nice to meet you yesterday";
+    var convo1=document.getElementById('curchat').innerHTML;
 
-conversation1="Hey how are you?";
-conversation2=("Miss you!");
-conversation3="Love all the pictures of the grandkids!";
-conversation4="See you at lunch";
-conversation5="It was nice to meet you yesterday";
-var convo1=document.getElementById('curchat').innerHTML;
+    var convo2='<h3>You\'re Chat With:</h3><h2 id="chatName">Carlie Hallee</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
+        '<p><h3>'+"Miss you!"+'</h3></p><span class="time-left">10:20</span></div>';;
 
-var convo2='<h3>You\'re Chat With:</h3><h2 id="chatName">Carlie Hallee</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
-'<p><h3>'+"Miss you!"+'</h3></p><span class="time-left">10:20</span></div>';;
+    var convo3='<h3>You\'re Chat With:</h3><h2 id="chatName">Diamond Sattler</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
+        '<p><h3>'+conversation3+'</h3></p><span class="time-left">9:20</span></div>';;
 
-var convo3='<h3>You\'re Chat With:</h3><h2 id="chatName">Diamond Sattler</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
-'<p><h3>'+conversation3+'</h3></p><span class="time-left">9:20</span></div>';;
+    var convo4='<h3>You\'re Chat With:</h3><h2 id="chatName">Jestine Primus</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
+        '<p><h3>'+conversation4+'</h3></p><span class="time-left">8:00</span></div>';;
 
-var convo4='<h3>You\'re Chat With:</h3><h2 id="chatName">Jestine Primus</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
-'<p><h3>'+conversation4+'</h3></p><span class="time-left">8:00</span></div>';;
+    var convo5='<h3>You\'re Chat With:</h3><h2 id="chatName">Ozwell Swink</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
+        '<p></h3>'+conversation5+'</h3></p><span class="time-left">6:20</span></div>';;
+    var curChat =0;
 
-var convo5='<h3>You\'re Chat With:</h3><h2 id="chatName">Ozwell Swink</h2><div class="container"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="left" style="width:100%;">'+
-'<p></h3>'+conversation5+'</h3></p><span class="time-left">6:20</span></div>';;
-var curChat =0;
+    function addEvent(e) {
+        var clickedItem = e.target.id;
 
-function addEvent(e) {
-  var clickedItem = e.target.id;
-  modal.style.display = "none";
-  if(clickedItem=='p0'|| clickedItem=='info0' || clickedItem=='name0'|| clickedItem=='img0' ||clickedItem=='c1'){
-    document.getElementById('curchat').innerHTML=convo1;
-    curChat=0;
+        if(clickedItem=='p0'|| clickedItem=='info0' || clickedItem=='name0'|| clickedItem=='img0' ||clickedItem=='c1'){
+            document.getElementById('curchat').innerHTML=convo1;
+            curChat=0;
 
-  }
-  if(clickedItem=='p1'|| clickedItem=='info1' || clickedItem=='name1'|| clickedItem=='img1'||clickedItem=='c2'){
-    document.getElementById('curchat').innerHTML=convo2;
-    curChat=1;
-  }if(clickedItem=='p2'|| clickedItem=='info2' || clickedItem=='name2'|| clickedItem=='img2'||clickedItem=='c3'){
-    document.getElementById('curchat').innerHTML=convo3;
-    curChat=2;
-  }if(clickedItem=='p3'|| clickedItem=='info3' || clickedItem=='name3'|| clickedItem=='img3'||clickedItem=='c4'){
-    document.getElementById('curchat').innerHTML=convo4;
-    curChat=3;
-  }if(clickedItem=='p4'|| clickedItem=='info4' || clickedItem=='name4'|| clickedItem=='img4'||clickedItem=='c5'){
-    document.getElementById('curchat').innerHTML=convo5;
-    curChat=4;
-  }
+        }
+        if(clickedItem=='p1'|| clickedItem=='info1' || clickedItem=='name1'|| clickedItem=='img1'||clickedItem=='c2'){
+            document.getElementById('curchat').innerHTML=convo2;
+            curChat=1;
+        }if(clickedItem=='p2'|| clickedItem=='info2' || clickedItem=='name2'|| clickedItem=='img2'||clickedItem=='c3'){
+            document.getElementById('curchat').innerHTML=convo3;
+            curChat=2;
+        }if(clickedItem=='p3'|| clickedItem=='info3' || clickedItem=='name3'|| clickedItem=='img3'||clickedItem=='c4'){
+            document.getElementById('curchat').innerHTML=convo4;
+            curChat=3;
+        }if(clickedItem=='p4'|| clickedItem=='info4' || clickedItem=='name4'|| clickedItem=='img4'||clickedItem=='c5'){
+            document.getElementById('curchat').innerHTML=convo5;
+            curChat=4;
+        }
 
-}
+    }
 
 
-function sendMsg(e){
+    function sendMsg(e){
 
-  var x = document.getElementById("txtInput").value;
+        var x = document.getElementById("txtInput").value;
 
-  var time =  new Date().getTime() / 1000;
+        var time =  new Date().getTime() / 1000;
 
 
-  document.getElementById("curchat").innerHTML+=('<div class="container lighter"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="right" style="width:100%;">'+
-  '<h3>'+x+'</h3></p><span class="time-left">11:20</span></div>');
+        document.getElementById("curchat").innerHTML+=('<div class="container lighter"><img src="http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg" class="right" style="width:100%;">'+
+            '<h3>'+x+'</h3></p><span class="time-left">11:20</span></div>');
 
-  if(curChat==0){
-    convo1=document.getElementById('curchat').innerHTML;
-  }
-  if(curChat==1){
-    convo2=document.getElementById('curchat').innerHTML;
-  }if(curChat==2){
-    convo3=document.getElementById('curchat').innerHTML;
-  }if(curChat==3){
-    convo4=document.getElementById('curchat').innerHTML;
-  }if(curChat==4){
-    convo5=document.getElementById('curchat').innerHTML;
-  }
-}
+        if(curChat==0){
+            convo1=document.getElementById('curchat').innerHTML;
+        }
+        if(curChat==1){
+            convo2=document.getElementById('curchat').innerHTML;
+        }if(curChat==2){
+            convo3=document.getElementById('curchat').innerHTML;
+        }if(curChat==3){
+            convo4=document.getElementById('curchat').innerHTML;
+        }if(curChat==4){
+            convo5=document.getElementById('curchat').innerHTML;
+        }
+    }
 
 
 
-var results = [];
-results.push(new Person("Antone Kimmons","M","Friend","Hey how are you?"));
-results.push(new Person("Arnold Heindel","M","Friend","Kleenex"));
-results.push(new Person("Arnulfo Roosevelt","M","NONE","Sprite"));  
-results.push(new Person("Bret Champion","M","NONE","General Electric"  ));
-results.push(new Person("Carlie Hallee","F","Friend","Miss you!"  ));
-results.push(new Person("Chris Stannard","M","Brother","Prada" ));
-results.push(new Person("Chung Dwight","M","NONE","Nokia"   ));
-results.push(new Person("Cornell Breitenbach","M","Cousin","Google"   ));
-results.push(new Person("Dacia Loo","F","NONE","Siemens AG"  ));
-results.push(new Person("Danyell Bad","M","Friend","Avon"   ));
-results.push(new Person("Deadra Neill","F","NONE","JP Morgan"   )); 
+    var results = [];
+    results.push(new Person("Antone Kimmons","M","Friend","Hey how are you?"));
+    results.push(new Person("Arnold Heindel","M","Friend","Kleenex"));
+    results.push(new Person("Arnulfo Roosevelt","M","NONE","Sprite"));
+    results.push(new Person("Bret Champion","M","NONE","General Electric"  ));
+    results.push(new Person("Carlie Hallee","F","Friend","Miss you!"  ));
+    results.push(new Person("Chris Stannard","M","Brother","Prada" ));
+    results.push(new Person("Chung Dwight","M","NONE","Nokia"   ));
+    results.push(new Person("Cornell Breitenbach","M","Cousin","Google"   ));
+    results.push(new Person("Dacia Loo","F","NONE","Siemens AG"  ));
+    results.push(new Person("Danyell Bad","M","Friend","Avon"   ));
+    results.push(new Person("Deadra Neill","F","NONE","JP Morgan"   ));
 
-results.push(new Person("Deanne Farnes","F","Friend","HSBC"    ));
-results.push(new Person("Diamond Sattler","F","Sister","Love all the pictures of the grandkids"  ));  
-results.push(new Person("Erlene Saner","F","NONE","Tiffany & Co."   )); 
-results.push(new Person("Evelina Jantzen","F","Cousin","Tesco Corporation" )); 
+    results.push(new Person("Deanne Farnes","F","Friend","HSBC"    ));
+    results.push(new Person("Diamond Sattler","F","Sister","Love all the pictures of the grandkids"  ));
+    results.push(new Person("Erlene Saner","F","NONE","Tiffany & Co."   ));
+    results.push(new Person("Evelina Jantzen","F","Cousin","Tesco Corporation" ));
 
-results.push(new Person("Fabian Saylor","M","NONE","Mitsubishi"   ));
-results.push(new Person("Hannah Fritz","F","Friend","Heineken Brewery")); 
+    results.push(new Person("Fabian Saylor","M","NONE","Mitsubishi"   ));
+    results.push(new Person("Hannah Fritz","F","Friend","Heineken Brewery"));
 
-results.push(new Person("Gloria Cort","F","Friend","Beko"    ));
-results.push(new Person("Irena Beachum","F","NONE","SAP"   ));
+    results.push(new Person("Gloria Cort","F","Friend","Beko"    ));
+    results.push(new Person("Irena Beachum","F","NONE","SAP"   ));
 
-results.push(new Person("Isaias Germann","M","Friend","Hewlett-Packard " )); 
-results.push(new Person("Issac Oram","M","NONE","Grandson","Microsoft"   ));
-results.push(new Person("Ivelisse Segarra","F","Friend","Heineken Brewery "   ));
-results.push(new Person("Jere Carn","M","NONE","HSBC"   ));
-results.push(new Person("Jerome Frigo","M","NONE","Caterpillar Inc."));
-results.push(new Person("Jestine Primus","F","Friend","See you for lunch"  ));  
-results.push(new Person("Kirsten Efird","F","NONE","Ferrari S.p.A."    ));
-results.push(new Person("Lawrence Moulder","M","Grandson,Nintendo"  ));
-results.push(new Person("Leonel Calvery","M","NONE","Canon"   ));
-results.push(new Person("Levi Sipe","M","Friend","Nintendo"   ));
-results.push(new Person("Lillian Hetzler","F","NONE","Canon "     ));
-results.push(new Person("Lino Overfiel","M","Cousin","Verizon Communications "  ));
-results.push(new Person("Lottie Desilva","F","NONE","Ralph Lauren Corporation"  )); 
-results.push(new Person("Mardell Minchew","M","Brother","AT&T"  )); 
-results.push(new Person("Maricruz Lever","M","Friend","MTV"   ));
-results.push(new Person("Mario Probst","M","NONE","Canon"   ));
-results.push(new Person("Maybelle Ennis","F","Grandaughter","Verizon Communications"   )); 
-results.push(new Person("Merrilee Batt","F","NONE","AT&T"    ));
-results.push(new Person("Mike Bussard","M","Friend","MTV "  ));
-results.push(new Person("Neida Corpuz","F","NONE","Yahoo!"    ));
-results.push(new Person("Olive Creamer","M","NONE","Canon"  ));
-results.push(new Person("Ozell Swink","M","NONE","It was nice to meet you yesterday"  )); 
-results.push(new Person("Paulette Breiner","F","Grandaughter"    ));
-results.push(new Person("Penny Guerrette","F","Friend","Yahoo!"    ));
-results.push(new Person("Raye Kanner","M","NONE","Canon"   ));
-results.push(new Person("Rey Bancroft","M","Friend","HSBC"   ));
-results.push(new Person("Robbie Ensminger","M","NONE","Tesco Corporation" ));  
-results.push(new Person("Simonne Mctaggart","M","Grandson","Heineken Brewery"   ));
-results.push(new Person("Stacey Digby","F","NONE","Jack Daniel's"    ));
-results.push(new Person("Stephania Kerlin","F","Friend","Tesco Corporation"    ));
-results.push(new Person("Suzi Huck","F","NONE","Jack Daniel's "  ));
-results.push(new Person("Tiesha Pfister","F","Friend","HSBC"   )); 
-results.push(new Person("Todd Baier","M","NONE","Heineken Brewery" ));  
-results.push(new Person("Wilbur Carillo","M","NONE","HSBC" ));  
-results.push(new Person("Wyatt Veillon","M","NONE","Tesco Corporation" ));
+    results.push(new Person("Isaias Germann","M","Friend","Hewlett-Packard " ));
+    results.push(new Person("Issac Oram","M","NONE","Grandson","Microsoft"   ));
+    results.push(new Person("Ivelisse Segarra","F","Friend","Heineken Brewery "   ));
+    results.push(new Person("Jere Carn","M","NONE","HSBC"   ));
+    results.push(new Person("Jerome Frigo","M","NONE","Caterpillar Inc."));
+    results.push(new Person("Jestine Primus","F","Friend","See you for lunch"  ));
+    results.push(new Person("Kirsten Efird","F","NONE","Ferrari S.p.A."    ));
+    results.push(new Person("Lawrence Moulder","M","Grandson,Nintendo"  ));
+    results.push(new Person("Leonel Calvery","M","NONE","Canon"   ));
+    results.push(new Person("Levi Sipe","M","Friend","Nintendo"   ));
+    results.push(new Person("Lillian Hetzler","F","NONE","Canon "     ));
+    results.push(new Person("Lino Overfiel","M","Cousin","Verizon Communications "  ));
+    results.push(new Person("Lottie Desilva","F","NONE","Ralph Lauren Corporation"  ));
+    results.push(new Person("Mardell Minchew","M","Brother","AT&T"  ));
+    results.push(new Person("Maricruz Lever","M","Friend","MTV"   ));
+    results.push(new Person("Mario Probst","M","NONE","Canon"   ));
+    results.push(new Person("Maybelle Ennis","F","Grandaughter","Verizon Communications"   ));
+    results.push(new Person("Merrilee Batt","F","NONE","AT&T"    ));
+    results.push(new Person("Mike Bussard","M","Friend","MTV "  ));
+    results.push(new Person("Neida Corpuz","F","NONE","Yahoo!"    ));
+    results.push(new Person("Olive Creamer","M","NONE","Canon"  ));
+    results.push(new Person("Ozell Swink","M","NONE","It was nice to meet you yesterday"  ));
+    results.push(new Person("Paulette Breiner","F","Grandaughter"    ));
+    results.push(new Person("Penny Guerrette","F","Friend","Yahoo!"    ));
+    results.push(new Person("Raye Kanner","M","NONE","Canon"   ));
+    results.push(new Person("Rey Bancroft","M","Friend","HSBC"   ));
+    results.push(new Person("Robbie Ensminger","M","NONE","Tesco Corporation" ));
+    results.push(new Person("Simonne Mctaggart","M","Grandson","Heineken Brewery"   ));
+    results.push(new Person("Stacey Digby","F","NONE","Jack Daniel's"    ));
+    results.push(new Person("Stephania Kerlin","F","Friend","Tesco Corporation"    ));
+    results.push(new Person("Suzi Huck","F","NONE","Jack Daniel's "  ));
+    results.push(new Person("Tiesha Pfister","F","Friend","HSBC"   ));
+    results.push(new Person("Todd Baier","M","NONE","Heineken Brewery" ));
+    results.push(new Person("Wilbur Carillo","M","NONE","HSBC" ));
+    results.push(new Person("Wyatt Veillon","M","NONE","Tesco Corporation" ));
 
 </script>
 </body>
