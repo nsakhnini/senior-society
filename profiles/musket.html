@@ -1,0 +1,180 @@
+<!--
+	profile.html
+	
+	04/24/2018
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+        <!-- <meta name="mobile-viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no,maximum-scale = 1.0"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/speechRecognition.js"></script>
+        <script src="js/feedController.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/setting.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/sidebarMenu.css">
+        <!--For sidebar menu-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- w3 google Icons, only for help icon so far -->
+        <script src="js/setting.js"></script>
+        <script>
+            window.onload = function() {
+                closeSidebar();
+            }
+            ;
+            function openSidebar() {
+                document.getElementById("sidebarMenu").style.display = "block";
+            }
+            function closeSidebar() {
+                document.getElementById("sidebarMenu").style.display = "none";
+            }
+        </script>
+    </head>
+    <body style="">
+        <!-- Sidebar Menu -->
+        <nav class="w3-sidebar w3-bar-block w3-card" id="sidebarMenu" style="display: none">
+            <div class="w3-container w3-theme-d2">
+                <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+                <br>
+                <a href="profile.html" class="w3-padding w3-center">
+                    <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
+                </a>
+            </div>
+            <a class="w3-bar-item w3-button" href="newsfeed.html">
+                <i class="fa fa-home fa-2x"></i>
+                <h2>Home</h2>
+            </a>
+            <a class="w3-bar-item w3-button" href="messages.html">
+                <i class="fa fa-comments fa-2x"></i>
+                <h2>Messages</h2>
+            </a>
+            <a class="w3-bar-item w3-button" href="friendreq.html">
+                <i class="fa fa-users fa-2x"></i>
+                <h2>Friends</h2>
+            </a>
+            <a class="w3-bar-item w3-button" href="setting.html">
+                <i class="fa fa-cog fa-2x"></i>
+                <h2>Settings</h2>
+            </a>
+        </nav>
+        <div>
+            <div class="">
+                <header class="w3-bar w3-card w3-theme">
+                    <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" type="button" onclick="openSidebar()">&#9776;</button>
+                    <h2 class="w3-bar-item">My Profile</h2>
+                    <img class="w3-circle" href="" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:20%">
+                    <!-- help button -->
+                    <button class="w3-button w3-hover-theme w3-right" button onclick="document.getElementById('help').style.display='block'">
+                        <i class="material-icons" id="help_NewsFeed" style="float:right;">help</i>
+                    </button>
+                    <!-- help button dialog -->
+                    <div id="help" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <div class="w3-container" style="color:black">
+                                <span class="w3-button w3-display-topright" onclick="document.getElementById('help').style.display='none'">&times;</span>
+                                <h2>Profile Help</h2>
+                                <p>
+                                    This is the <b>Profile</b>
+                                    page.
+                                
+                                
+                                
+                                
+                                
+                                </p>
+                                <h4>Comment</h4>
+                                <p>The Comment button allows you to add your own comment to a specific post.</p>
+                                <h4>Like</h4>
+                                <p>The Like button allows you to show appreciation by 'Liking' a post.</p>
+                                <h4>Remove</h4>
+                                <p>"empty"</p>
+                                <h4>Access other Menus or Pages</h4>
+                                <p>Access other menus or pages by clicking the Menu Icon in the top left corner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <button class="w3-button w3-block w3-teal w3-xlarge w3-border" style="margin-bottom:10%;" onclick="document.getElementById('post').style.display='block'">POST SOMETHING</button>
+                <div id="post" class="w3-modal" style="padding-top:5px;">
+                    <div class="w3-modal-content">
+                        <div class="w3-container" style="color:black">
+                            <span class="w3-button w3-display-topright" onclick="document.getElementById('post').style.display='none'">&times;</span>
+                            <label for="file" class="w3-button w3-block w3-white w3-border w3-xlarge w3-round">
+                                <i class="material-icons">perm_media</i>
+                                Upload Photo/Video
+                                
+                            </label>
+                            <input id="file" type="file" accept="image/*,video/*" style=" opacity: 0; display:none">
+                            <textarea class="w3-border w3-round-large" placeholder="write something..." style="width:100%; height:150px"></textarea>
+                            <a class="w3-button w3-block w3-teal w3-xlarge w3-border w3-theme" href="newsfeed.html">SHARE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-card w3-padding-8 w3-half w3-left">
+                    <div class="w3-left" style="width:50%">
+                        <a href="gates.html"><img src="https://pbs.twimg.com/profile_images/929933611754708992/ioSgz49P_400x400.jpg" class="w3-circle w3-padding" alt="Bill Gates" style="width:100%; max-width:300px"></a>
+                    </div>
+                    <div class="w3-left" style="width:50%">
+                        <h2 class="w3-padding">Hey, don't sell people's data.
+				</h2>
+                    </div>
+                    <button class="w3-button w3-blue">Comment</button>
+                    <button class="w3-button w3-green">Like</button>
+                    <button class="w3-button w3-right w3-red">Remove</button>
+                </div>
+                <div class="w3-card w3-padding-8 w3-half w3-left">
+                    <div class="w3-left" style="width:50%">
+                        <a href="profiles/congressman.html">
+                            <img src="profiles/congressman.JPG" class="w3-circle w3-padding" alt="Sen. Kennedy" style="width:100%; max-width:300px">
+                        </a>
+                    </div>
+</a>
+<div class="w3-left" style="width:50%">
+    <h2 class="w3-padding">Your user agreement sucks!
+				</h2>
+</div>
+<button class="w3-button w3-blue">Comment</button>
+<button class="w3-button w3-green">Like</button>
+<button class="w3-button w3-right w3-red">Remove</button>
+</div>
+<div class="w3-card w3-padding-8 w3-half w3-left">
+    <div class="w3-left" style="width:50%">
+        <a href="profiles/musk.html">
+            <img src="profiles/musket.JPG" href="musket.html" class="w3-circle w3-padding" alt="Elongated Musket" style="width:100%; max-width:300px">
+        </a>
+    </div>
+    <div class="w3-left" style="width:50%">
+        <h2 class="w3-padding">We're done with Facebook.
+				</h2>
+    </div>
+    <button class="w3-button w3-blue">Comment</button>
+    <button class="w3-button w3-green">Like</button>
+    <button class="w3-button w3-right w3-red">Remove</button>
+</div>
+<div class="w3-card w3-padding-8 w3-half w3-left">
+    <div class="w3-left" style="width:50%">
+        <a href="profiles/cook.html">
+            <img src="profiles/cook.JPG" class="w3-circle w3-padding" alt="Tim Cookie" style="width:100%; max-width:300px">
+        </a>
+    </div>
+    <div class="w3-left" style="width:50%">
+        <h2 class="w3-padding">Hey, you'll ruin this for all of us.
+				</h2>
+    </div>
+    <button class="w3-button w3-blue">Comment</button>
+    <button class="w3-button w3-green">Like</button>
+    <button class="w3-button w3-right w3-red">Remove</button>
+</div>
+</div><div class="w3-container"></div>
+<!-- Sidebar -->
+</div></body></html>
