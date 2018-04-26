@@ -1,288 +1,356 @@
-<!--
-	friendreq.html
-	
-	04/25/2018
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Friends</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <meta name="mobile-viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no,maximum-scale = 1.0"> -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-	
-    <script src="js/speechRecognition.js"></script>
-	
-	<link rel="stylesheet" href="css/sidebarMenu.css">					<!--For sidebar menu-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- w3 google Icons, only for help icon so far -->
-	
-	
-    <style>
+  <title>Friends</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/speechRecognition.js"></script>
+  <script src="js/person.js"></script>
 
-        * {
-            box-sizing: border-box;
-        }
+  <style>
 
-        body {
-            margin: 0;
-        }
+  * {
+    box-sizing: border-box;
+  }
 
-        /* Style the header */
-        .header {
-            background-color: #f1f1f1;
-            padding: 20px;
-            text-align: center;
-        }
+  body {
+    margin: 0;
+  }
 
-        /* Style the top navigation bar */
-        .topnav {
-            overflow: hidden;
-            background-color: #333;
-        }
+  /* Style the header */
+  .header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
 
-        /* Style the topnav links */
-        .topnav a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
 
-        /* Change color on hover */
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .btn {
-            background-color: DodgerBlue; /* Blue background */
-            border: none; /* Remove borders */
-            color: white; /* White text */
-            padding: 12px 16px; /* Some padding */
-            font-size: 16px; /* Set a font size */
-            cursor: pointer; /* Mouse pointer on hover */
-        }
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
 
-        /* Darker background on mouse-over */
-        .btn:hover {
-            background-color: RoyalBlue;
-        }
-    </style>
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  button{
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+button:hover {
+    background-color: RoyalBlue;
+}
+  </style>
 </head>
 
 <body style="">
-
-<!-- Sidebar Menu -->
-<nav class="w3-sidebar w3-bar-block w3-card" id="sidebarMenu" style="display: none">
+<!-- Side Bar Menu-->
+  <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
     <div class="w3-container w3-theme-d2">
-        <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
-        <br>
-        <a href="profile.html" class="w3-padding w3-center">
-                    <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
-                </a>
+      <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+      <br>
+      <div class="w3-padding w3-center">
+        <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
+      </div>
     </div>
-    <a class="w3-bar-item w3-button" href="newsfeed.html">
-		<i class="fa fa-home fa-2x"></i>
-		<h2>Home</h2>
-	</a>
-    <a class="w3-bar-item w3-button" href="messages.html">
-		<i class="fa fa-comments fa-2x"></i>
-		<h2>Messages</h2>
-	</a>
-    <a class="w3-bar-item w3-button" href="friendreq.html">
-		<i class="fa fa-users fa-2x"></i>
-		<h2>Friends</h2>
-	</a>
-    <a class="w3-bar-item w3-button" href="setting.html">
-		<i class="fa fa-cog fa-2x"></i>
-		<h2>Settings</h2>
-	</a>
-</nav>
+    <a class="w3-bar-item w3-button" href="newsfeed.html"><h2>Home</h2></a>
+    <a class="w3-bar-item w3-button" href="messages.html"><h2>Messages</h2></a>
+    <a class="w3-bar-item w3-button" href="#"><h2>Friends</h2></a>
+    <a class="w3-bar-item w3-button" href="setting.html"><h2>Settings</h2></a>
+  </nav>
 
-<header class="w3-bar w3-card w3-theme">
+  <header class="w3-bar w3-card w3-theme">
     <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
     <h2 class="w3-bar-item">Find a Friend</h2>
-	
-	<!-- help button -->
-	<button class="w3-button w3-hover-theme w3-right" button onclick="document.getElementById('help').style.display='block'"> <i class="material-icons" id="help_NewsFeed" style="float:right;">help</i> </button>
-	
-	<!-- help button dialog -->
-    <div id="help" class ="w3-modal">
-        <div class="w3-modal-content">
-            <div class="w3-container" style="color:black">
-                <span class="w3-button w3-display-topright" onclick="document.getElementById('help').style.display='none'" >&times;</span>
-				
-				<h2>Find a Friend Help</h2>
-				<p>This is the <b>Find a Friend</b> page. Here you are able to search for a specific friend from your Friends List.</p>
-				<h4>Search for a Friend</h4>
-				<p> Search for a Friend by clicking in the 'Search a friend' box to type or click the Microphone icon to enter text with speech using a microphone.</p>
-				<h4>Access other menus or pages</h4>
-				<p>Access other menus or pages by clicking the Menu Icon in the top left corner.</p>		
-			</div>
-        </div>
-    </div>
-</header>
-<div class = "w3-bar w3-card w3-theme" style="padding-left:1%; padding-bottom: 5%;">
+  </header>
+
+  <!-- Search Bar Entry -->
+  <div class = "w3-bar w3-card w3-theme" style="padding-left:1%; padding-bottom: 5%;">
     <form id="searchForm">
-        <div class="wrapper" style="width:85%;">
-            <input type="text" id="searchText" style="width:90%; font-size: 30px; padding-top: 0" placeholder="Search a friend... " >
-            <button type="button" class="mic" id="searchMic" style="width: 8%; padding-top: 5px;"><i class="fa fa-microphone" style="font-size:33px;"></i></button>
-        </div>
-        <button class="btn" style="background-color: transparent"><img class="" id="searchButton" src="https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png" style="width:40px; height:40px"></button>
+      <div class="wrapper" style="width:85%;">
+        <input type="text" id="searchText" style="width:90%; font-size: 30px; padding-top: 0" placeholder="Search a friend... " >
+        <button type="button" class="mic" id="searchMic" style="width: 8%; padding-top: 5px;"><i class="fa fa-microphone" style="font-size:33px;"></i></button>
+      </div>
+      <button class="btn" style="background-color: transparent"><img class="" id="searchButton" src="https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png" style="width:40px; height:40px"></button>
     </form>
-</div>
-<div class="w3-container">
-    <hr>
+  </div>
 
-    <div id="txt1" class="w3-cell-row">
-        <div id="img1" class="w3-cell" style="width:30%">
-        </div>
-        <div class="w3-cell w3-container">
-            <h3 id="name1" style="width:100%"></h3>
-        </div>
-        <div id="bttn" align="right">
-            <button id="bttnAdd" type="button" class="btn">Add Friend</button>
-        </div>
-        <div id="bttnClose" align="right">
-            <button id="close" type="button" class="btn"><i class="fa fa-close"></i></button>
-        </div>
-    </div>
+<!-- Search Results Section -->
+  <div class="w3-container" id="list-group">
+  </div>
+
+<!-- Footer -->
+  <footer class="w3-container w3-theme w3-margin-top">
+  </footer>
 
 
-    <hr>
-    <div id="txt2" class="w3-cell-row">
-        <div id="img2" class="w3-cell" style="width:30%">
-        </div>
-        <div class="w3-cell w3-container">
-            <h3 id="name2"></h3>
-        </div>
-    </div>
+  <script>
+  var results = [];
+
+  var boolAdd = false;
+  //document.getElementById('bttnAdd').style.display= "none";
+  //document.getElementById('close').style.display= "none";
+
+  var friend;
+  var searchtxt;
+
+  document.getElementById('searchForm').addEventListener('submit', function(e) {
+    //search(document.getElementById('searchText'));
+    //document.getElementById('searchText').value ="hi";
+
+    e.preventDefault();
+    document.getElementById("list-group").innerHTML="";
+    searchtxt = document.getElementById('searchText').value;
+    seatchtxt = searchtxt.toLowerCase();
+    addFriendList();
+  }, false);
+
+  function addFriendList(){
+
+    var html="<hr>";
+    var addF = results[0];
+    var n = results.length;
+
+    var subTxt = searchtxt.toLowerCase();
 
 
-    <hr>
-    <div id="txt3" class="w3-cell-row">
-        <div id="img3" class="w3-cell" style="width:30%">
-        </div>
-        <div class="w3-cell w3-container">
-            <h3 id="name3"></h3>
-        </div>
-    </div>
-    <hr>
-</div>
-<footer class="w3-container w3-theme w3-margin-top">
+    for(i=0; i < 55; i++){
+      addF=results[i];
+      var pName = (addF.name).toLowerCase();
+      if((pName).startsWith(subTxt,0)){
+        addElement('list-group', 'div', 'txt' + (i).toString() , html);
+        html="";
+        addElement('txt' + (i).toString(), 'div', 'img' + (i).toString(), html);
+        addElement('txt' + (i).toString(),'div',"info" + (i).toString(),""  );
+        addElement('info' + (i).toString(),'h3',"name" + (i).toString(),""  );
 
-</footer>
-
-<script>
-    var boolAdd = false;
-    document.getElementById('bttnAdd').style.display= "none";
-    document.getElementById('close').style.display= "none";
-
-    var greenTick = document.createElement("IMG");
-    greenTick.setAttribute("src", "https://417smiles.com/wp-content/uploads/2017/08/green-tick-icon-0.png");
-    greenTick.setAttribute("width", "15%");
-
-    var cancel = document.createElement("IMG");
-    cancel.setAttribute("src", "https://cdn0.iconfinder.com/data/icons/round-ui-icons/512/close_red.png");
-    cancel.setAttribute("width", "20%");
-
-
-    var img = document.createElement("IMG");
-    img.setAttribute("class", "w3-circle");
-    img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
-    img.setAttribute("width", "100%");
-
-    var name3 = "Jasmine Smith";
-    var relationship3 = "Is your: Cousin";
-    var job3 = "Works at: Rush Hospital";
-
-    var img1 = document.createElement("IMG");
-    img1.setAttribute("class", "w3-circle");
-    img1.setAttribute("src", " http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg");
-    img1.setAttribute("width", "100%");
-
-    var name1 = "James Hill";
-    var relationship1 = "Is your: Cousin";
-    var job1 = "Works at: Rush Hospital";
-
-    var img2 = document.createElement("IMG");
-    img2.setAttribute("class", "w3-circle");
-    img2.setAttribute("src", "https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg");
-    img2.setAttribute("width", "100%");
-
-    var name2 = "Jane Doe";
-    var relationship2 = "Is your: Sister";
-    var job2 = "Works at: Chase Bank";
-
-
-
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-        //search(document.getElementById('searchText'));
-        //document.getElementById('searchText').value ="hi";
-
-        e.preventDefault();
-        document.getElementById('img1').append(img1);
-        document.getElementById('name1').append(name1);
-        document.getElementById('bttnAdd').style.display= "block";
-
-
-        document.getElementById('img2').append(img2);
-        document.getElementById('name2').append(name2);
-        document.getElementById('txt2').append(relationship2);
-        document.getElementById('txt2').innerHTML +="<br>"
-        document.getElementById('txt2').append(job2);
-
-        document.getElementById('img3').append(img);
-        document.getElementById('name3').append(name3);
-        document.getElementById('txt3').append(relationship3);
-        document.getElementById('txt3').innerHTML +="<br>"
-        document.getElementById('txt3').append(job3);
-
-
-
-    }, false);
-
-    document.getElementById('bttnAdd').addEventListener('click', function(evt)
-    {
-        // Your code here.
-        if(boolAdd == false){
-            document.getElementById('bttnAdd').style.display= "none";
-            document.getElementById('close').style.display= "block";
-            alert("Friend Request Sent");
-            boolAdd=true;
-
+        document.getElementById("txt"+ (i).toString()).setAttribute('class','class="w3-cell-row');
+        document.getElementById("img"+ (i).toString()).setAttribute('class','w3-cell' );
+        document.getElementById("img"+ (i).toString()).setAttribute('style','width:30%' );
+        document.getElementById("info"+ (i).toString()).setAttribute('class', 'w3-cell w3-container');
+        if(addF.gender == "F"){
+          var img = document.createElement("IMG");
+          img.setAttribute("class", "w3-circle");
+          img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
+          img.setAttribute("width", "100%");
+        }
+        else{
+          var img = document.createElement("IMG");
+          img.setAttribute("class", "w3-circle");
+          img.setAttribute("src", "http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg");
+          img.setAttribute("width", "100%");
         }
 
+        document.getElementById("img" + (i).toString()).append(img);
 
-    });
+        document.getElementById("name"+ (i).toString()).append(addF.name);
+        document.getElementById('info'+ (i).toString()).append("Relationship: " +addF.relation);
+        document.getElementById('info'+ (i).toString()).innerHTML+="<br>";
+        document.getElementById('info'+ (i).toString()).append("Works at: " +addF.work);
 
-    document.getElementById('close').addEventListener('click', function(evt)
-    {
-        // Your code here.
-        if(boolAdd == true){
-            document.getElementById('bttnAdd').style.display= "block";
-            document.getElementById('close').style.display= "none";
-            alert("Friend Request Cancelled");
-            boolAdd=false;
+        if(addF.relation == "NONE"){
+          addElement('txt' + (i).toString(), 'div', 'col' +(i).toString(), "");
+          document.getElementById('col' + (i).toString()).setAttribute('class', 'w3-container w3-green w3-cell');
 
+          addElement('col' + (i).toString(), 'button', "bttn"+ (i).toString()+'i', "Add Friend");
+          document.getElementById('bttn' + (i).toString()+'i').addEventListener("click", addEvent, false);
+          document.getElementById("bttn"+ (i).toString()+'i').setAttribute('class','btn');
+
+
+          addElement("col"+ (i).toString(),'button', "bttn"+ (i).toString()+'ix', "Cancel");
+          document.getElementById("bttn"+ (i).toString()+'ix').style.display="none";
+          document.getElementById("bttn"+ (i).toString()+'ix').setAttribute('class','btn');
+          document.getElementById("bttn"+ (i).toString()+'ix').addEventListener("click", addEvent, false);
         }
-
-
-    });
-
-    closeSidebar();
-    function openSidebar() {
-        document.getElementById("sidebarMenu").style.display = "block";
+        $("list-group").innerHTML+="</div>";
+        html="<hr>";
+      }
+      //addElement('list-group', 'div', 'txt' + (i).toString() , "<hr>");
     }
-    function closeSidebar() {
-        document.getElementById("sidebarMenu").style.display = "none";
+    //document.getElementById("img" + (4).toString()).append(img2);
+
+  }
+
+  function addElement(parentId, elementTag, elementId, html) {
+    // Adds an element to the document
+    var p = document.getElementById(parentId);
+    var newElement = document.createElement(elementTag);
+    newElement.setAttribute('id', elementId);
+    newElement.innerHTML = html;
+    p.appendChild(newElement);
+  }
+
+  function addEvent(e) {
+    var clickedItem = e.target.id;
+    if(boolAdd == false){
+      document.getElementById(clickedItem).style.display = "none";
+      document.getElementById(clickedItem+'x').style.display = "block";
+      //document.getElementById(clickedItem + "i").show();
+      //document.getElementById('close').style.display= "block";
+      alert("Friend Request Sent");
+      boolAdd=true;
+
     }
+    else{
+      alert("Friend Request Cancelled");
+      boolAdd=false;
+      document.getElementById(clickedItem).style.display = "none";
+      var revBttn = clickedItem.slice(0, -1);
+      document.getElementById(revBttn).style.display= "block";
+
+    }
+}
+/*
+  document.getElementById('bttnAdd').addEventListener('click', function(evt)
+  {
+    // Your code here.
+    /*
+    if(boolAdd == false){
+      document.getElementById('bttnAdd').style.display= "none";
+      document.getElementById('close').style.display= "block";
+      alert("Friend Request Sent");
+      boolAdd=true;
+
+    }
+
+
+  });
+/*
+  document.getElementById('close').addEventListener('click', function(evt)
+  {
+    // Your code here.
+    if(boolAdd == true){
+      document.getElementById('bttnAdd').style.display= "block";
+      document.getElementById('close').style.display= "none";
+      alert("Friend Request Cancelled");
+      boolAdd=false;
+
+    }
+
+
+  });
+*/
+
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+
+
+  closeSidebar();
+  function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+  }
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+
+  var greenTick = document.createElement("IMG");
+  greenTick.setAttribute("src", "https://417smiles.com/wp-content/uploads/2017/08/green-tick-icon-0.png");
+  greenTick.setAttribute("width", "15%");
+
+  var cancel = document.createElement("IMG");
+  cancel.setAttribute("src", "https://cdn0.iconfinder.com/data/icons/round-ui-icons/512/close_red.png");
+  cancel.setAttribute("width", "20%");
+
+  var img = document.createElement("IMG");
+  img.setAttribute("class", "w3-circle");
+  img.setAttribute("src", " http://www.sundayapple.lk/wp-content/uploads/2017/02/7e593fb52fb6701b72f61b875635f045.jpg");
+  img.setAttribute("width", "100%");
+
+
+  var img1 = document.createElement("IMG");
+  img1.setAttribute("class", "w3-circle");
+  img1.setAttribute("src", " http://trade-mgmt.com/wp-content/uploads/2016/08/facebook-default-no-profile-pic.jpg");
+  img1.setAttribute("width", "100%");
+
+
+  var img2 = document.createElement("IMG");
+  img2.setAttribute("class", "w3-circle");
+  img2.setAttribute("src", "https://amherstmuckrakedotcom.files.wordpress.com/2015/04/blank_profile_female.jpg");
+  img2.setAttribute("width", "100%");
+
+
+  results.push(new Person("Antone Kimmons","M","Friend","Mercedes-Benz"));
+  results.push(new Person("Arnold Heindel","M","Friend","Kleenex"));
+  results.push(new Person("Arnulfo Roosevelt","M","NONE","Sprite"));  
+  results.push(new Person("Bret Champion","M","NONE","General Electric"));
+  results.push(new Person("Carlie Hallee","F","Friend","Apple Inc."));
+  results.push(new Person("Chris Stannard","M","Brother","Prada"));
+  results.push(new Person("Chung Dwight","M","NONE","Nokia"));
+  results.push(new Person("Cornell Breitenbach","M","Cousin","Google"));
+  results.push(new Person("Dacia Loo","F","NONE","Siemens AG"));
+  results.push(new Person("Danyell Bad","M","Friend","Avon"));
+  results.push(new Person("Deadra Neill","F","NONE","JP Morgan")); 
+
+  results.push(new Person("Deanne Farnes","F","Friend","HSBC"));
+  results.push(new Person("Diamond Sattler","F","Sister,Citigroup"));  
+  results.push(new Person("Erlene Saner","F","NONE","Tiffany & Co.")); 
+  results.push(new Person("Evelina Jantzen","F","Cousin","Tesco Corporation")); 
+    
+  results.push(new Person("Fabian Saylor","M","NONE","Mitsubishi"));
+  results.push(new Person("Hannah Fritz","F","Friend","Heineken Brewery")); 
+
+  results.push(new Person("Gloria Cort","F","Friend","Beko"));
+  results.push(new Person("Irena Beachum","F","NONE","SAP"));
+
+  results.push(new Person("Isaias Germann","M","Friend","Hewlett-Packard ")); 
+  results.push(new Person("Issac Oram","M","NONE","Grandson","Microsoft"));
+  results.push(new Person("Ivelisse Segarra","F","Friend","Heineken Brewery "));
+  results.push(new Person("Jere Carn","M","NONE","HSBC"));
+  results.push(new Person("Jerome Frigo","M","NONE","Caterpillar Inc."));
+  results.push(new Person("Jestine Primus","F","Friend","The Walt Disney Company"));  
+  results.push(new Person("Kirsten Efird","F","NONE","Ferrari S.p.A."));
+  results.push(new Person("Lawrence Moulder","M","Grandson,Nintendo"));
+  results.push(new Person("Leonel Calvery","M","NONE","Canon"));
+  results.push(new Person("Levi Sipe","M","Friend","Nintendo"));
+  results.push(new Person("Lillian Hetzler","F","NONE","Canon "));
+  results.push(new Person("Lino Overfiel","M","Cousin","Verizon Communications "));
+  results.push(new Person("Lottie Desilva","F","NONE","Ralph Lauren Corporation")); 
+  results.push(new Person("Mardell Minchew","M","Brother","AT&T")); 
+  results.push(new Person("Maricruz Lever","M","Friend","MTV"));
+  results.push(new Person("Mario Probst","M","NONE","Canon"));
+  results.push(new Person("Maybelle Ennis","F","Grandaughter","Verizon Communications")); 
+  results.push(new Person("Merrilee Batt","F","NONE","AT&T"));
+  results.push(new Person("Mike Bussard","M","Friend","MTV "));
+  results.push(new Person("Neida Corpuz","F","NONE","Yahoo!"));
+  results.push(new Person("Olive Creamer","M","NONE","Canon"));
+  results.push(new Person("Ozell Swink","M","NONE","Verizon Communications")); 
+  results.push(new Person("Paulette Breiner","F","Grandaughter"));
+  results.push(new Person("Penny Guerrette","F","Friend","Yahoo!"));
+  results.push(new Person("Raye Kanner","M","NONE","Canon"));
+  results.push(new Person("Rey Bancroft","M","Friend","HSBC"));
+  results.push(new Person("Robbie Ensminger","M","NONE","Tesco Corporation"));  
+  results.push(new Person("Simonne Mctaggart","M","Grandson","Heineken Brewery"));
+  results.push(new Person("Stacey Digby","F","NONE","Jack Daniel's"));
+  results.push(new Person("Stephania Kerlin","F","Friend","Tesco Corporation"));
+  results.push(new Person("Suzi Huck","F","NONE","Jack Daniel's "));
+  results.push(new Person("Tiesha Pfister","F","Friend","HSBC")); 
+  results.push(new Person("Todd Baier","M","NONE","Heineken Brewery"));  
+  results.push(new Person("Wilbur Carillo","M","NONE","HSBC"));  
+  results.push(new Person("Wyatt Veillon","M","NONE","Tesco Corporation"));
+
 </script>
 </body>
 </html>

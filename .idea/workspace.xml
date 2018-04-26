@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="89639474-fb12-4286-8e5a-e3c0c26e0489" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/messages.html" afterPath="$PROJECT_DIR$/messages.html" />
+      <change beforePath="$PROJECT_DIR$/friendReqDynamic.html" afterPath="$PROJECT_DIR$/friendreq.html" />
+      <change beforePath="$PROJECT_DIR$/friendreq.html" afterPath="$PROJECT_DIR$/friendreqold.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="9" column="75" lean-forward="true" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
+              <caret line="9" column="75" lean-forward="false" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -30,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="friendReqDynamic.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/friendReqDynamic.html">
+      <file leaf-file-name="friendreq.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/friendreq.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="441">
+              <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -43,14 +44,14 @@
       <file leaf-file-name="messages.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/messages.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="268" column="70" lean-forward="true" selection-start-line="268" selection-start-column="70" selection-end-line="268" selection-end-column="70" />
+            <state relative-caret-position="27">
+              <caret line="260" column="30" lean-forward="true" selection-start-line="260" selection-start-column="30" selection-end-line="260" selection-end-column="30" />
               <folding>
-                <marker date="1524755292722" expanded="true" signature="12991:13002" ph="..." />
-                <marker date="1524755292722" expanded="true" signature="13302:13313" ph="..." />
-                <marker date="1524755292722" expanded="true" signature="13613:13624" ph="..." />
-                <marker date="1524755292722" expanded="true" signature="13922:13933" ph="..." />
-                <marker date="1524755292722" expanded="true" signature="15385:15396" ph="..." />
+                <marker date="1524768975230" expanded="true" signature="13029:13040" ph="..." />
+                <marker date="1524768975230" expanded="true" signature="13340:13351" ph="..." />
+                <marker date="1524768975230" expanded="true" signature="13651:13662" ph="..." />
+                <marker date="1524768975230" expanded="true" signature="13960:13971" ph="..." />
+                <marker date="1524768975230" expanded="true" signature="15423:15434" ph="..." />
               </folding>
             </state>
           </provider>
@@ -106,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newsfeed.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="newsfeed.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newsfeed.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4956">
-              <caret line="256" column="119" lean-forward="false" selection-start-line="256" selection-start-column="119" selection-end-line="256" selection-end-column="119" />
+            <state relative-caret-position="105">
+              <caret line="335" column="22" lean-forward="true" selection-start-line="335" selection-start-column="22" selection-end-line="335" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -247,8 +248,11 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/friendreq.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/messages.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/profile.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/gates.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/setting.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -256,13 +260,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/congressman.JPG</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/congressman.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/cook.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/cook.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/gates.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/musket.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/profiles/musket.jpg</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -380,7 +377,7 @@
       <workItem from="1523326321227" duration="28348000" />
       <workItem from="1523551941091" duration="1405000" />
       <workItem from="1524425356286" duration="3063000" />
-      <workItem from="1524611609327" duration="6742000" />
+      <workItem from="1524611609327" duration="8432000" />
     </task>
     <task id="LOCAL-00001" summary="Merged Swipe and fixed sizes">
       <created>1523552444041</created>
@@ -407,7 +404,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42194000" />
+    <option name="totallyTimeSpent" value="43884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="41" width="1938" height="1048" extended-state="6" />
@@ -472,11 +469,11 @@
         <state relative-caret-position="1764">
           <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
-            <marker date="1524755292722" expanded="true" signature="12991:13002" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13302:13313" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13613:13624" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13922:13933" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="15385:15396" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13029:13040" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13340:13351" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13651:13662" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13960:13971" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="15423:15434" ph="..." />
           </folding>
         </state>
       </provider>
@@ -513,7 +510,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friendreq.html">
+    <entry file="file://$PROJECT_DIR$/friendreqold.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="102" column="20" lean-forward="false" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
@@ -526,7 +523,7 @@
         <state relative-caret-position="924">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <element signature="e#5805#5812#1" expanded="false" />
+            <element signature="e#5837#5844#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,11 +544,11 @@
         <state relative-caret-position="882">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <marker date="1524755292722" expanded="true" signature="12991:13002" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13302:13313" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13613:13624" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13922:13933" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="15385:15396" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13029:13040" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13340:13351" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13651:13662" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13960:13971" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="15423:15434" ph="..." />
           </folding>
         </state>
       </provider>
@@ -580,7 +577,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friendreq.html">
+    <entry file="file://$PROJECT_DIR$/friendreqold.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="102" column="20" lean-forward="false" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
@@ -602,7 +599,7 @@
         <state relative-caret-position="693">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#5805#5812#1" expanded="false" />
+            <element signature="e#5837#5844#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,11 +620,11 @@
         <state relative-caret-position="735">
           <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
           <folding>
-            <marker date="1524755292722" expanded="true" signature="12991:13002" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13302:13313" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13613:13624" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13922:13933" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="15385:15396" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13029:13040" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13340:13351" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13651:13662" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13960:13971" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="15423:15434" ph="..." />
           </folding>
         </state>
       </provider>
@@ -669,12 +666,12 @@
         <state relative-caret-position="693">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#5805#5812#1" expanded="false" />
+            <element signature="e#5837#5844#1" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friendreq.html">
+    <entry file="file://$PROJECT_DIR$/friendreqold.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2121">
           <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
@@ -807,18 +804,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/newsfeed_swipe.html" />
-    <entry file="file://$PROJECT_DIR$/friendreq.html">
+    <entry file="file://$PROJECT_DIR$/friendreqold.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3066">
           <caret line="146" column="20" lean-forward="false" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newsfeed.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4956">
-          <caret line="256" column="119" lean-forward="false" selection-start-line="256" selection-start-column="119" selection-end-line="256" selection-end-column="119" />
           <folding />
         </state>
       </provider>
@@ -876,7 +865,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="9" column="75" lean-forward="true" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
+          <caret line="9" column="75" lean-forward="false" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -884,24 +873,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/friendreq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/messages.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="268" column="70" lean-forward="true" selection-start-line="268" selection-start-column="70" selection-end-line="268" selection-end-column="70" />
+        <state relative-caret-position="27">
+          <caret line="260" column="30" lean-forward="true" selection-start-line="260" selection-start-column="30" selection-end-line="260" selection-end-column="30" />
           <folding>
-            <marker date="1524755292722" expanded="true" signature="12991:13002" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13302:13313" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13613:13624" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="13922:13933" ph="..." />
-            <marker date="1524755292722" expanded="true" signature="15385:15396" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13029:13040" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13340:13351" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13651:13662" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="13960:13971" ph="..." />
+            <marker date="1524768975230" expanded="true" signature="15423:15434" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friendReqDynamic.html">
+    <entry file="file://$PROJECT_DIR$/newsfeed.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="105">
+          <caret line="335" column="22" lean-forward="true" selection-start-line="335" selection-start-column="22" selection-end-line="335" selection-end-column="22" />
           <folding />
         </state>
       </provider>
