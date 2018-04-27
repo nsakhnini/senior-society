@@ -69,6 +69,7 @@ function handleSignUp() {
     // [START createwithemail]
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
+        console.log(error);
         var errorCode = error.code;
         var errorMessage = error.message;
         // [START_EXCLUDE]
@@ -79,8 +80,10 @@ function handleSignUp() {
         }
         console.log(error);
         // [END_EXCLUDE]
+        return;
     });
     // [END createwithemail]
+    //window.location = "newsfeed.html";
 }
 /**
  * Sends an email verification to the user.
@@ -146,7 +149,7 @@ function initApp() {
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
-            document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+            //document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             if (!emailVerified) {
                 //document.getElementById('quickstart-verify-email').disabled = false;
             }
