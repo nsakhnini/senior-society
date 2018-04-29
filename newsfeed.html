@@ -1,7 +1,14 @@
 <!--
 	newsfeed.html
 	
-	04/25/2018
+	04/29/2018
+	TODO: 
+	X hide image artifact on POST Something
+	X post only on share instead of load
+	X post layout
+	X Post Something: Text
+	- Fix sidebar menu in Friends
+	- Fix sidebar menu in Messages
 -->
 
 <!DOCTYPE html>
@@ -24,6 +31,7 @@
     <link rel="stylesheet" href="css/swipeFeature_swipe.css">
 	<link rel="stylesheet" href="css/sidebarMenu.css">					<!--For sidebar menu-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- w3 google Icons, only for help icon so far -->
+	<link rel="stylesheet" href="css/util.css">
 	
     <title>News Feed</title>
     <script>
@@ -36,28 +44,7 @@
         function closeSidebar() {
             document.getElementById("sidebarMenu").style.display = "none";
         }
-    </script>
-	
-	<!-- Uploading Post -->
-	<script>
-	$(function(){
-		$(":file").change(function(e){
-			console.log("file changed!!!");
-			
-			if (this.files && this.files[0]) {
-				var reader = new FileReader();
-				reader.onload = function(e){
-					var imageResult = e.target.result;
-					$('#userImagePreview').attr('src', imageResult);
-					$('#userImagePost').attr('src', imageResult);
-				}
-				reader.readAsDataURL(this.files[0]);
-			}
-		});
-
-	});
-	</script>
-	
+    </script>	
 </head>
 <body style="">
 
@@ -99,7 +86,7 @@
     <div id="help" class ="w3-modal">
         <div class="w3-modal-content">
             <div class="w3-container" style="color:black">
-                <span class="w3-button w3-display-topright" onclick="document.getElementById('help').style.display='none'" >&times;</span>
+                <span class="cancel-button w3-button w3-display-topright" onclick="document.getElementById('help').style.display='none'" >&times;</span>
 				
 				<h2>News Feed Help</h2>
 				<p>This is the <b>News Feed</b> page. This page also serves as your Home page. Here you are able to see posts of all your friends that you follow.</p>
@@ -125,26 +112,27 @@
 	
 	<!-- Post Something Panel Button -->
 	<div class="panel w3-cell">
-        <button class="w3-button w3-block w3-teal w3-xlarge w3-border" style="margin-bottom:10%;" onclick="document.getElementById('post').style.display='block'">POST SOMETHING</button>
+        <button class="w3-button w3-block w3-xlarge w3-border" onclick="document.getElementById('post').style.display='block'">POST SOMETHING</button>
     </div>
 	
 	<!-- Post Something dialog -->
-    <div id="post" class ="w3-modal" style="padding-top:5px;">
-        <div class="w3-modal-content">
-            <div class="w3-container" style="color:black">
+    <div id="post" class ="w3-modal">
+        <div class="w3-modal-content" style="padding:10px;">
+			
+			<!-- Upload -->
+			<div class='w3-cell-row' style="padding-bottom:10px;">
+				<label for="file" id="fileInput" class="w3-button w3-cell w3-block w3-white w3-border w3-xlarge"><i class="material-icons">perm_media</i> Upload Photo/Video</label>
+				<input id="file" type="file" accept="image/*,video/*" style=" opacity:0; display:none;">				
 				<!-- cancel button -->
-                <span class="w3-button w3-display-topright" onclick="document.getElementById('post').style.display='none'" >&times;</span>
-				<!-- Upload -->
-				<label for="file" id="fileInput" class="w3-button w3-block w3-white w3-border w3-xlarge w3-round"><i class="material-icons">perm_media</i> Upload Photo/Video</label>
-				<input id="file" type="file" accept="image/*,video/*" style=" opacity: 0; display:none">
-				<img id="userImagePreview" src="#" height="30%" ></a>
-				<textarea  class="w3-border w3-round-large" placeholder="write something..." style="width:100%; height:150px" ></textarea> 
-				<!-- <a class="w3-button w3-block w3-teal w3-xlarge w3-border w3-theme" href="newsfeed.html">SHARE</a>	-->
-				<button id="sharePost" class =" w3-button w3-block w3-xlarge w3-border w3-theme">SHARE</button>
-            </div>
+				<div class="w3-button w3-cell cancel-button" onclick="document.getElementById('post').style.display='none'">&times;</div>
+			</div>
+			<img id="userImagePreview" src="#" height="30%" style="display:none"></a>
+			<textarea  id="userTextPreview" class="w3-border w3-round-large" style="width:100%; height:150px;" placeholder="write something..."></textarea> 
+			<!-- <a class="w3-button w3-block w3-teal w3-xlarge w3-border w3-theme" href="newsfeed.html">SHARE</a>	-->
+			<button id="sharePost" class =" w3-button w3-block w3-xlarge w3-border w3-theme">SHARE</button>           
         </div>
     </div>
-	
+
 	<!-- User Post -->
     <div id="userPost" class="panel-view w3-cell-row" style="display:none;">
         <div class="slider">
@@ -157,8 +145,8 @@
                     </div>
                     <div class="w3-cell w3-container">
                         <h3 style="font-size: 25px;">User</h3>
-                        <p style="font-size: 18px;">...</p>
-                        <img id="userImagePost" src="#" width="100%" ></a>
+                        <p id="userTextPost" style="font-size: 18px;">...</p>
+                        <img id="userImagePost" src="#" width="100%" style="display:none;"></a>
                     </div>
                 </div>
                 <!-- Comment Field -->
@@ -193,7 +181,8 @@
             </div>
         </div>
     </div>
-    <hr>
+
+	<hr>
 	
     <div id="post1" class="panel-view w3-cell-row" >
         <div class="slider">
@@ -340,18 +329,46 @@
     <hr>
 </div>
 
-<!--Share post button-->
+<!-- Uploading Post -->
 <script>
-	$(function(){
-		$('#sharePost').click(function(){
-			console.log("sharePost button clicked!");
-			
-			//close modal preview
-			$('#post').removeAttr("style").hide();
-			//display user post
-			$('#userPost').show();
-		});	
+var imageFlag = false;
+
+$(function(){
+	$(":file").change(function(e){
+		console.log("file changed!!!");
+		imageFlag=true;
+		
+		if (this.files && this.files[0]) {
+			var reader = new FileReader();							//get media to upload in post
+			reader.onload = function(e){
+				var imageResult = e.target.result;					//preview media in post preview
+				$('#userImagePreview').attr('src', imageResult);
+				//$('#userImagePost').attr('src', imageResult);		//moved to: 'Share post button' script
+				
+				$('#userImagePreview').show();
+			}
+			reader.readAsDataURL(this.files[0]);
+		}
 	});
+});
+
+<!--Share post button-->
+$(function(){
+	$('#sharePost').click(function(){
+		console.log("sharePost button clicked!");
+		//copy preview image and text to post
+		if(imageFlag){
+			$('#userImagePost').attr('src', $('#userImagePreview').attr('src'));
+			$('#userImagePost').show();
+		}
+		$('#userTextPost').text( $('#userTextPreview').val() );
+		//close modal preview
+		$('#post').removeAttr("style").hide();
+
+		//display user post
+		$('#userPost').show();
+	});	
+});
 </script>
 
 <!--Swipe Feature code: TODO: add to jquery-->
