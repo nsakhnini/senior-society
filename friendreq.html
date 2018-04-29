@@ -1,3 +1,9 @@
+<!--
+	friendreq.html
+	
+	04/29/2018
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +16,10 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/speechRecognition.js"></script>
   <script src="js/person.js"></script>
+  
+  <link rel="stylesheet" href="css/sidebarMenu.css">					<!--For sidebar menu-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- w3 google Icons, only for help icon so far -->
+  <link rel="stylesheet" href="css/util.css">
 
   <style>
 
@@ -66,24 +76,55 @@ button:hover {
 </head>
 
 <body style="">
-<!-- Side Bar Menu-->
-  <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
-    <div class="w3-container w3-theme-d2">
-      <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
-      <br>
-      <div class="w3-padding w3-center">
-        <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
-      </div>
-    </div>
-    <a class="w3-bar-item w3-button" href="newsfeed.html"><h2>Home</h2></a>
-    <a class="w3-bar-item w3-button" href="messages.html"><h2>Messages</h2></a>
-    <a class="w3-bar-item w3-button" href="#"><h2>Friends</h2></a>
-    <a class="w3-bar-item w3-button" href="setting.html"><h2>Settings</h2></a>
-  </nav>
 
+<!-- Sidebar Menu -->
+<nav class="w3-sidebar w3-bar-block w3-card" id="sidebarMenu" style="display: none">
+    <div class="w3-container w3-theme-d2">
+        <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+        <br>
+        <a href="profile.html" class="w3-padding w3-center">
+            <img class="w3-circle" src="https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044" alt="avatar" style="width:75%">
+        </a>
+    </div>
+    <a class="w3-bar-item w3-button" href="newsfeed.html">
+		<i class="fa fa-home fa-2x"></i>
+		<h2>Home</h2>
+	</a>
+    <a class="w3-bar-item w3-button" href="messages.html">
+		<i class="fa fa-comments fa-2x"></i>
+		<h2>Messages</h2>
+	</a>
+    <a class="w3-bar-item w3-button" href="friendreq.html">
+		<i class="fa fa-users fa-2x"></i>
+		<h2>Friends</h2>
+	</a>
+    <a class="w3-bar-item w3-button" href="setting.html">
+		<i class="fa fa-cog fa-2x"></i>
+		<h2>Settings</h2>
+	</a>
+</nav>
   <header class="w3-bar w3-card w3-theme">
     <button class="w3-bar-item w3-button w3-xxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
     <h2 class="w3-bar-item">Find a Friend</h2>
+	
+	<!-- help button -->
+	<button class="w3-button w3-hover-theme w3-right" button onclick="document.getElementById('help').style.display='block'"> <i class="material-icons" id="help_NewsFeed" style="float:right;">help</i> </button>
+	
+	<!-- help button dialog -->
+    <div id="help" class ="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container" style="color:black">
+                <span class="cancel-button w3-button w3-display-topright" onclick="document.getElementById('help').style.display='none'" >&times;</span>
+				
+				<h2>Find a Friend Help</h2>
+				<p>This is the <b>Find a Friend</b> page.  Here you are able to search for your current friends or add new friends.</p>
+				<h4>Search for Friend</h4>
+				<p>Search for a friend by entering their name, or part of a name, into the Search Box at the top of the screen. Press 'Enter' or press the 'Search' icon to bring up a list of closely related names. Each person will show a name, and optionally, their relationship status and workplace. </p>
+				<h4>Access other menus or pages</h4>
+				<p>Access other menus or pages by clicking the Menu Icon in the top left corner.</p>
+            </div>
+        </div>
+    </div>
   </header>
 
   <!-- Search Bar Entry -->
@@ -105,7 +146,19 @@ button:hover {
   <footer class="w3-container w3-theme w3-margin-top">
   </footer>
 
-
+<!-- Sidebar Menu -->
+<script>
+        window.onload = function (ev) {
+            closeSidebar();
+        };
+        function openSidebar() {
+            document.getElementById("sidebarMenu").style.display = "block";
+        }
+        function closeSidebar() {
+            document.getElementById("sidebarMenu").style.display = "none";
+        }
+</script>	
+  
   <script>
   var results = [];
 
@@ -256,15 +309,6 @@ button:hover {
 ////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
-
-
-  closeSidebar();
-  function openSidebar() {
-    document.getElementById("mySidebar").style.display = "block";
-  }
-  function closeSidebar() {
-    document.getElementById("mySidebar").style.display = "none";
-  }
 
   var greenTick = document.createElement("IMG");
   greenTick.setAttribute("src", "https://417smiles.com/wp-content/uploads/2017/08/green-tick-icon-0.png");
